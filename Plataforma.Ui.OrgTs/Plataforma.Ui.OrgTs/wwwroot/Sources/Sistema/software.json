@@ -1,0 +1,43 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_Software/selecionarTodos",
+    "colunas": [
+      {
+        "data": "nome_software",
+        "title": "Nome do Software"
+      },
+      {
+        "data": "versao_software",
+        "title": "Versão do Software"
+      },
+      {
+        "class": "never",
+        "data": "id_software",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_Software/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../Sistema_Menu/PaginasMenuSelecionarTodos",
+        "colunas": [
+          {
+            "data": "nome_software",
+            "title": "Nome do Software"
+          },
+          {
+            "data": "versao_software",
+            "title": "Versão do Software"
+          }
+        ],
+        "btVisualizarLista": [ "../Sistema_Menu/paginas-menus-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

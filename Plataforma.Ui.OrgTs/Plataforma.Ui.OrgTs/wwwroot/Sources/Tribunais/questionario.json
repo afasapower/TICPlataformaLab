@@ -1,0 +1,41 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Tribunal_Questionario/selecionarTodos",
+    "colunas": [
+      {
+        "data": "descricao",
+        "title": "Questionário"
+      },
+
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Tribunal_Questionario/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../menu/PaginasMenuSelecionarTodos",
+        "colunas": [
+          {
+            "data": "descricao",
+            "title": "Descricao"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../menu/paginas-menus-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

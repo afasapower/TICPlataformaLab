@@ -1,0 +1,71 @@
+﻿@model Plataforma.Ui.OrgTs.ViewModel.Sistema.GrupoViewModel
+@{
+    Layout = null;
+
+    Permissao_Grupo dados = Model.permissaoGrupo ?? new Permissao_Grupo();
+    Retorno_Permissao_Grupo_Pagina dadosPermissaoGrupoMenu = Model.permissaoGrupoPaginas;
+    List<Modulo> modulos = Model.listaModulos;
+
+    // Botões para o menu detalhes da aba solicitada    
+    BtMenuDetalhes dadosMenu = new BtMenuDetalhes()
+    {
+        listaPermissoesMenuUtilitarios = Model.listaPermissoesMenus,
+        ListaMenuDetalhes = new List<MenuDetalhes>()
+        {
+            new MenuDetalhes(){Id = dadosPermissaoGrupoMenu.id_pagina, Tipo = "salvar", Visivel = true},
+            new MenuDetalhes(){Id = dadosPermissaoGrupoMenu.id_pagina, Tipo = "cancelar", Visivel = true, Url = "Sistema_Grupo/grupo-permissao-aba"},
+            new MenuDetalhes(){Id = dadosPermissaoGrupoMenu.id_pagina, Tipo = "incluir", Visivel = true},
+            new MenuDetalhes(){Id = dadosPermissaoGrupoMenu.id_pagina, Tipo = "deletar", Visivel = true},
+            new MenuDetalhes(){Id = dadosPermissaoGrupoMenu.id_pagina, Tipo = "atualizar", Visivel = true}
+        }
+    };
+}
+<section class="conteudo-aba">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <h1>Permissões do grupo</h1>
+            </div>
+            <partial name="menus/MenuDetalhes" model='dadosMenu' />
+        </div>
+    </div>
+    <div class="row">
+        <div></div>
+    </div>
+    <div class="row">
+        <form class="col-lg-12 col-md-12 col-sm-12" action="Sistema_Grupo/grupo-permissao-aba">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group col-md-12">
+                        <label for="matrimonio_religioso_estado">Módulos</label><br />
+                        <select class="select-titan" id="modulos_select" tabindex="1" data-live-search="true" data-titan-parceiro="menu_select" data-titan-url="Sistema_Grupo/RetornaMenu" disabled>
+                            <option value="">Selecione um módulo</option>
+                            @foreach (var item in modulos)
+                            {
+                                if (item.id == dadosPermissaoGrupoMenu.id_modulo)
+                                {
+                                    <option value="@item.id" selected>@item.nome</option>
+                                }
+                                else
+                                {
+                                    <option value="@item.id">@item.nome</option>
+                                }
+                            }
+                        </select>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="menu_select">Menus</label><br />
+                        <select class="select-titan" id="menu_select" name="menu_select" tabindex="2" data-titan-id-edicao="@dadosPermissaoGrupoMenu.id_menu" data-live-search="true" data-titan-url="Sistema_Grupo/grupo-permissao-area-select" data-titan-menu-ativo="true" data-titan-destino="area-select" disabled>
+                            <option value="">Selecione um módulo acima</option>
+                        </select>
+                    </div>
+                </div>               
+            </div>
+            <div class="col-md-12 col-lg-10">
+                <div id="area-select" class="row margin-top-25"></div>
+            </div>
+           
+        </form>
+    </div>
+</section>

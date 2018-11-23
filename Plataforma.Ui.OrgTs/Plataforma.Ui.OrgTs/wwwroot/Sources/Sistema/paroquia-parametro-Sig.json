@@ -1,0 +1,39 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../ParoquiaParametroSig/selecionarTodos",
+    "colunas": [
+      {
+        "data": "razao_social_nome",
+        "title": "Nome"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../ParoquiaParametroSig/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../menu/PaginasMenuSelecionarTodos",
+        "colunas": [
+          {
+            "data": "nome",
+            "title": "Nome"
+          }
+        ],
+        "btVisualizarLista": [ "../menu/paginas-menus-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}
+
+
+                                      
+                                      

@@ -1,0 +1,58 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_Cidade/selecionarTodos",
+    "colunas": [
+      {
+        "data": "nome",
+        "title": "Nome da Cidade"
+      },
+      {
+        "data": "estados.nome",
+        "title": "Estado"
+      },
+      {
+        "data": "cod_ibge",
+        "title": "Cód. IBGE"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_Cidade/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../Sistema_Menu/PaginasMenuSelecionarTodos",
+        "colunas": [
+          {
+            "data": "nome",
+            "title": "Nome da Cidade"
+          },
+          {
+            "data": "estados.nome",
+            "title": "Estado"
+          },
+          {
+            "data": "cod_ibge",
+            "title": "Cód. IBGE"
+          }
+
+        ],
+        "btVisualizarLista": [ "../Sistema_Menu/paginas-menus-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}
+
+
+
+
+
+

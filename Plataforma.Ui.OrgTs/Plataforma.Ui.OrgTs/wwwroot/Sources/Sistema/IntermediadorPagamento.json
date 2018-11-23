@@ -1,0 +1,20 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_IntermediadorPagamento/selecionarTodos",
+    "colunas": [
+      {
+        "data": "nome",
+        "title": "Descrição"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_IntermediadorPagamento/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {}
+}

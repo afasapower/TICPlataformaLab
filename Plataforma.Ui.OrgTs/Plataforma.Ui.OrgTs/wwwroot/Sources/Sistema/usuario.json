@@ -1,0 +1,61 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_Usuario/selecionarTodos",
+    "colunas": [
+      {
+        "data": "login",
+        "title": "Login"
+      },
+      {
+        "data": "data_inclusao",
+        "title": "Data de inclusão"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_Usuario/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../Sistema_Usuario/GruposelecionarTodos",
+        "colunas": [
+
+          {
+            "data": "grupo.nome",
+            "title": "Grupo"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Sistema_Usuario/grupousuario-aba" ],
+        "botoes": [ "excel" ]
+      },
+      {
+        "url": "../Sistema_Usuario/UsuarioAppSelecionarTodos",
+        "colunas": [
+          {
+            "data": "usuario_sig",
+            "title": "Usuário"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Sistema_Usuario/usuarioApp-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

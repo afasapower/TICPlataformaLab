@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+<header class="row">
+    <div id="topo-sistema" class="col-md-12 col-lg-12">
+        <a class="navbar-brand" href="~/" target="_self">
+            <img src="~/images/logo-facef.png" alt="Uni-FACEF" />
+        </a>
+        <!-- Menu perfil -->
+        <div class="menu-user-block">
+            <div class="dropdown">
+
+                <a href="javascript: void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                    <span class="icmn-menu7" href="javascript:void(0);"></span>
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="" role="menu">
+                    <li>
+                        <a class="dropdown-item"><i class="dropdown-icon icmn-user"></i> Perfil</a>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-header" >Início</div>
+                        <a class="dropdown-item" href="~/" target="_self"><i class="dropdown-icon icmn-circle-right"></i> Tela inicial</a>               
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="~/Sistema_Contas/Logout" target="_self"><i class="dropdown-icon icmn-exit"></i> Sair do sistema</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Fim Menu perfil -->
+        @await Component.InvokeAsync("Empresa")       
+     
+    </div>
+
+    <!-- Menu Geral-->
+    @await Component.InvokeAsync("MenuGeral")    
+    <!-- Fim menu geral -->
+</header>

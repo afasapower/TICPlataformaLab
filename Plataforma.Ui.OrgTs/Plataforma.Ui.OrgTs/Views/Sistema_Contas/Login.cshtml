@@ -1,0 +1,87 @@
+﻿@{
+    Layout = null;
+    bool validacao = ViewBag.Retorno;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Uni-FACEF | Sistema Laboratório</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-sweetalert/dist/sweetalert.css" rel="stylesheet" />
+    <link href="~/lib/datatables/media/css/dataTables.bootstrap4.css" rel="stylesheet" />
+
+    <link href="~/lib/datatables/media/css/buttons.dataTables.css" rel="stylesheet" />
+    <link href="~/lib/datatables/media/css/buttons.bootstrap4.css" rel="stylesheet" />
+   
+
+    <link href="~/css/source/components/pagination.css" rel="stylesheet" />
+    <link href="~/css/source/main.css" rel="stylesheet" />
+    <link href="~/css/menu-topo.css" rel="stylesheet" />
+    <link href="~/css/modulos.css" rel="stylesheet" />
+    <link href="~/css/sub-menus.css" rel="stylesheet" />
+
+
+</head>
+<body class="theme-default" id="tela-login" style="background: url('/images/TelaLogin.jpg'); background-size:contain; background-repeat: no-repeat;">
+    <section class="page-content">
+        <div class="single-page-block vertical-align-middle" style="margin-top:10%; margin-left:10%;">
+            <div class="single-page-block-inner effect-3d-element">
+                <div class="blur-placeholder"><!-- --></div>
+                <div class="single-page-block-form">
+                    <h3 class="text-center">
+                        <i class="icmn-enter margin-right-10"></i>
+                        Seja bem vindo
+                    </h3>
+                    <p>Insira seus dados de acesso abaixo.</p>
+                    <br />
+                    <form id="form-validation" action="Login" name="form-validation" method="post">
+
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <input id="validation-email"
+                                    class="form-control"
+                                    placeholder="Usuário"
+                                    name="username"
+                                    type="text">
+                        </div>
+                        <div class="form-group">
+                            <input id="validation-password"
+                                    class="form-control password"
+                                    name="password"
+                                    type="password" placeholder="Senha">
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <p class="pull-right">Esqueceu senha?</p>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-login width-175">ACESSAR O SISTEMA</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/tether/dist/js/tether.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/lib/bootstrap-sweetalert/dist/sweetalert.js"></script>
+        <script src="~/js/sistema/login.js"></script>        
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/tether/dist/js/tether.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/lib/bootstrap-sweetalert/dist/sweetalert.js"></script>
+        <script src="~/js/min/sistema/login.js"></script>
+    </environment>
+    <script src="~/lib/jquery-md5/jquery.md5.js"></script>
+   </body>
+</html>

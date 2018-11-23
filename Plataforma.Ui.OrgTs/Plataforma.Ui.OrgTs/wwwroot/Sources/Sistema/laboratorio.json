@@ -1,0 +1,43 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_Laboratorio/selecionarTodos",
+    "colunas": [
+      {
+        "data": "nome",
+        "title": "Nome do Laboratorio"
+      },
+      {
+        "data": "unidade",
+        "title": "Unidade do Laboratorio"
+      },
+      {
+        "class": "never",
+        "data": "id_laboratorio",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_Laboratorio/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../Sistema_Menu/PaginasMenuSelecionarTodos",
+        "colunas": [
+          {
+            "data": "nome",
+            "title": "Nome do Laboratorio"
+          },
+          {
+            "data": "unidade",
+            "title": "Unidade do Laboratorio"
+          }
+        ],
+        "btVisualizarLista": [ "../Sistema_Menu/paginas-menus-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

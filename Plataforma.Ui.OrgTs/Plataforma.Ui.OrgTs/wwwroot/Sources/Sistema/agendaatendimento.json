@@ -1,0 +1,44 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_AgendaAtendimento/selecionarTodos",
+    "colunas": [
+      {
+        "data": "nome_solicitante",
+        "title": "Nome Solicitante"
+      },
+      {
+        "data": "data",
+        "title": "Data"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_AgendaAtendimento/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../Sistema_Menu/PaginasMenuSelecionarTodos",
+        "colunas": [
+          {
+            "data": "descricao",
+            "title": "Descricao"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Sistema_Menu/paginas-menus-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

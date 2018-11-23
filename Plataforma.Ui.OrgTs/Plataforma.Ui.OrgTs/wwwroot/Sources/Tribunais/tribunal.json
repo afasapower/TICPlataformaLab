@@ -1,0 +1,169 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../tribunal/selecionarTodos",
+    "colunas": [
+      {
+        "data": "pessoa.nome_fantasia_apelido",
+        "title": "Nome"
+      },
+      {
+        "data": "pessoa.razao_social_nome",
+        "title": "Diocese"
+      },
+      {
+        "data": "pessoa.site",
+        "title": "Site"
+      },
+      {
+        "class": "never",
+        "data": "id_pessoa",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../tribunal/interno" ],
+    "botoes": []
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../tribunal/EnderecoSelecionarTodos",
+        "colunas": [
+          {
+            "data": "tipo_Enderecamento.nome",
+            "title": "Tipo"
+
+          },
+          {
+            "data": "endereco",
+            "title": "Endereço"
+          },
+          {
+            "data": "bairro",
+            "title": "Bairro"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../tribunal/endereco-aba" ],
+        "botoes": [ "excel" ]
+      },
+      {
+        "url": "../tribunal/ValoresSelecionarTodos",
+        "colunas": [
+          {
+            "data": "descricao",
+            "title": "Descrição"
+          },
+          {
+            "data": "data_inicial",
+            "title": "Data Inicial"
+          },
+          {
+            "data": "data_final",
+            "title": "Data Final"
+          },
+          {
+            "data": "valor",
+            "title": "Valor"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../tribunal/valores-aba" ],
+        "botoes": [ "excel" ]
+      },
+      {
+        "url": "../tribunal/RecebimentoSelecionarTodos",
+        "colunas": [
+          {
+            "data": "forma_Recebimento.descricao",
+            "title": "Descrição"
+          },
+          {
+            "data": "data_inclusao",
+            "title": "Data de inclusão"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../tribunal/recebimento-aba" ],
+        "botoes": [ "excel" ]
+      },
+      {
+        "url": "../tribunal/DiaSemanaSelecionarTodos",
+        "colunas": [
+          {
+            "data": "dia_Semana.nome",
+            "title": "Dia"
+          },
+          {
+            "data": "horario_inicio_atendimento",
+            "title": "Horário inicial"
+          },
+          {
+            "data": "horario_fim_atendimento",
+            "title": "Horário de encerramento"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../tribunal/dia-semana-aba" ],
+        "botoes": [ "excel" ]
+      },
+      {
+        "url": "../tribunal/TelefoneSelecionarTodos",
+        "colunas": [
+          {
+            "data": "telefone",
+            "title": "Telefone"
+          },
+          {
+            "data": "tipo_Telefone.nome",
+            "title": "Tipo de Telefone"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../tribunal/telefone-aba" ],
+        "botoes": [ "excel" ]
+      },
+      {
+        "url": "../tribunal/EmailSelecionarTodos",
+        "colunas": [
+          {
+            "data": "email",
+            "title": "E-mail"
+          },
+          {
+            "data": "tipo_Email.nome",
+            "title": "Tipo de E-mail"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../tribunal/email-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

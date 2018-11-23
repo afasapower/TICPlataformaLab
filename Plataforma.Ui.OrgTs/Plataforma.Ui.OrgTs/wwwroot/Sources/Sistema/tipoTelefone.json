@@ -1,0 +1,35 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_TipoTelefone/selecionarTodos",
+    "colunas": [
+      {
+        "data": "nome",
+        "title": "Nome"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_TipoTelefone/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../menu/PaginasMenuSelecionarTodos",
+        "colunas": [
+          {
+            "data": "nome",
+            "title": "Nome"
+          }
+         ],
+        "btVisualizarLista": [ "../menu/paginas-menus-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

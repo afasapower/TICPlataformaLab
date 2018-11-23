@@ -1,0 +1,232 @@
+﻿#topo-pesquisa-interna
+{
+    /*margin-bottom:20px;*/
+}
+
+#topo-pesquisa-interna form label
+{
+    font-family: "Lato", sans;
+    font-size: 20px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 0px;
+    /* text-shadow: rgb(224, 224, 224) 1px 1px 0px; */
+    padding-top: 2px;
+}
+
+#topo-pesquisa-interna .dropup .dropdown-toggle::after {
+    border-top: 0;
+    border-bottom: .3em solid;
+}
+#topo-pesquisa-interna .dropdown-toggle::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-right: .25rem;
+    margin-left: .25rem;
+    vertical-align: middle;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-left: .3em solid transparent;
+}
+
+#topo-pesquisa-interna .form-inline .form-control
+{
+    width: 300px;
+}
+#topo-pesquisa-interna .form-inline .btn.btn-icon 
+{
+    margin-left:10px;
+}
+#topo-pesquisa-interna .btn.btn-icon i
+{
+    margin-left:10px;
+}
+
+/* Listas abas inferior */
+.lista-abas
+{
+    margin-top:30px;
+}
+
+.lista-abas.inativo 
+{
+    visibility:hidden;
+    height:0px;
+    margin-top:0px;
+}
+
+/*Selects formulários*/
+.bootstrap-select.select-titan 
+{
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+/* Calendario dia atual */ 
+.lista-info-agenda-dia
+{
+   height:622px;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+.titulo-lista-etapas 
+{
+    white-space: pre-wrap; line-height: 19px;
+}
+#aviso-sem-internet {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: none;
+    z-index: 1040;
+    background: rgba(36, 34, 47, 0.3);
+}
+
+#faixa-sem-internet {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 255px;
+    margin: auto;
+    background: linear-gradient(45deg, white 25%, #f2f2f2 25%, #f2f2f2 50%, white 50%, white 75%, #f2f2f2 75%);
+    background-size: 40px 40px;
+    box-shadow: 0px 0px 26px -9px rgba(0,0,0,0.75);
+}
+
+.imagem-perfil-involucro .img-thumbnail {
+    position: relative;
+    overflow:hidden;
+}
+.imagem-perfil-involucro .img-thumbnail > div {
+    position: absolute;
+    right: -46px;
+    bottom: -12px;
+    z-index: 5;
+    background-color: #f2f4f8;
+    width: 120px;
+    height: 43px;
+    text-align: center;
+    vertical-align: middle;
+    transform: rotate(-37.7deg);
+    padding: 4px 0px 0px 0px;
+}
+.imagem-perfil-involucro .img-thumbnail > div i {
+    font-size: 24px;
+    transform: rotate(-52.7deg);
+    position: absolute;
+    left: 51px;
+}
+
+
+
+/*upload titan*/
+.involucro-input-file-titan 
+{
+    border-bottom: 1px solid #dfe4ed;
+    padding-bottom: 25px;
+}
+.involucro-input-file-titan:last-child
+{
+    border-bottom:none;
+}
+
+.panel > .panel-file-titan {
+    padding: 0px;
+}
+
+input[type=file].upload-titan {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+input[type=file].upload-titan + label {
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0px 0px;
+    margin-bottom: 0px;
+    height: 39px;
+    line-height: 1.1;
+}
+
+.no-js .upload-titan + label {
+    display: none;
+}
+
+.upload-titan:focus + label,
+.upload-titan.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.upload-titan + label {
+    color: #d3394c;
+}
+
+
+.upload-titan + label {
+    background-color: #46be8a;
+    border-color: #46be8a;
+    padding: 0;
+}
+
+    .upload-titan:focus + label,
+    .upload-titan.has-focus + label,
+    .upload-titan + label:hover {
+        border-color: #722040;
+    }
+
+    .upload-titan + label span,
+    .upload-titan + label strong {
+        padding: 10px 20px;
+        /* 10px 20px */
+    }
+
+.upload-titan + label span {
+    width: 215px;
+    min-height: 39px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: top;
+    background-color: #f2f4f8;
+    box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.1);
+    border: 1px solid #dcdddf;
+}
+
+    .upload-titan + label strong {
+        height: 100%;
+        color: #fff;
+        background-color: #46be8a;
+        display: inline-block;
+    }
+
+    .upload-titan:focus + label strong,
+    .upload-titan.has-focus + label strong,
+    .upload-titan + label:hover strong {
+        background-color: #46be8a;
+    }
+
+
+.involucro-input-file-titan .text-right > .btn-danger-outline {
+  
+   margin-right:0px;
+}
+
+
+@media screen and (max-width: 50em) {
+    .upload-titan + label strong {
+        display: block;
+    }
+}

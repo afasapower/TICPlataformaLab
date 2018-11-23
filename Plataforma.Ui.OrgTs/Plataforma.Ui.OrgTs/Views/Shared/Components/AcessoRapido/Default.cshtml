@@ -1,0 +1,98 @@
+﻿@model Plataforma.Ui.OrgTs.ViewModel.LayoutViewModel
+@using System.Linq
+@using Plataforma.Ui.OrgTs.ViewModel.Sistema
+@{
+    List<Modulo> modulos = Model.menuModulos;
+    List<Menu> menuAcao = Model.menuAcao;
+    List<Menu_Sub> menuSub = Model.menuSub;
+}
+<div class="col-md-4">
+    <section class="panel">
+        <div class="panel-heading">
+            <h2>Acesso rápido</h2>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="involucro-lista" id="acesso-rapido">
+                        @foreach (var dadosModulos in modulos)
+                        {
+                            foreach (var botaoAcao in menuAcao)
+                            {
+                                if (botaoAcao.id_modulo == dadosModulos.id)
+                                {
+                                    foreach (var botaoMenuSub in menuSub)
+                                    {
+                                        if (botaoMenuSub.parent == Guid.Empty && botaoMenuSub.id_menu == botaoAcao.id)
+                                        {
+                                            int b = 1;
+                                            List<TopoMenuViewModel> menuBotoes = new List<TopoMenuViewModel>();
+                                            System.Text.StringBuilder itens = new System.Text.StringBuilder();
+                                            foreach (var botaoPag in menuSub)
+                                            {
+                                                if (botaoPag.parent == botaoMenuSub.id)
+                                                {
+                                                    menuBotoes.Add(new TopoMenuViewModel()
+                                                    {
+                                                        nome = botaoPag.nome,
+                                                        cor = dadosModulos.cor,
+                                                        url = botaoPag.url,
+                                                        idPagina = (Guid)botaoPag.id_pagina
+                                                    });
+                                                }
+                                            }
+
+                                            foreach (var itemBtMenu in menuBotoes)
+                                            {
+                                                bool separador = ((b % 6 == 0 || b == menuBotoes.Count() || menuBotoes.Count() == 1) ? true : false);
+
+                                                itens.Append("<li class=\"");
+                                                itens.Append(itemBtMenu.cor);
+                                                itens.Append("-claro\" >");
+                                                itens.Append("<div class=\"bt-acesso-rapido\">");
+                                                itens.Append("<span class=\"sprite-acesso-rapido\" data-titan-acao-bt-acesso=\"");
+                                                itens.Append(botaoAcao.nome);
+                                                itens.Append("\"></span>");
+                                                itens.Append("<a href=\"");
+                                                itens.Append("http://localhost:56836/");
+                                                itens.Append(itemBtMenu.url);
+                                                itens.Append("?id_pagina=");
+                                                itens.Append(itemBtMenu.idPagina.ToString());
+                                                itens.Append("&id_menu=");
+                                                itens.Append(botaoMenuSub.id_menu.ToString());
+                                                itens.Append("\" class=\"");
+                                                itens.Append(dadosModulos.cor);
+                                                itens.Append("-escuro\" ");
+                                                itens.Append("data-titan-idpagina=\"");
+                                                itens.Append(itemBtMenu.idPagina.ToString());
+                                                itens.Append("\" target=\"_self\" >");
+                                                itens.Append(itemBtMenu.nome);
+                                                itens.Append("</a>");
+                                                itens.Append("<i class=\"icmn-arrow-right2 pull-right bt-acesso-");
+                                                itens.Append(itemBtMenu.cor);
+                                                itens.Append("-claro\"></i>");
+                                                itens.Append("</div></li>");
+
+                                                if (separador)
+                                                {
+                                        @Html.Raw("<ul class=" + dadosModulos.cor + "-medio>" + itens.ToString() + "</ul>")
+                                        itens = new System.Text.StringBuilder();
+                                    }
+                                         b++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group col-md-12" style="padding-right:0px;">
+                        <input type="text" class="form-control pull-right width-250 bt-pesquisa-rapida" name="pesquisa-acesso-rapido" data-titan-parceiro="acesso-rapido" placeholder="Digite aqui o que deseja acessar" id="pesquisa-acesso-rapido" value="">
+                    </div>                   
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

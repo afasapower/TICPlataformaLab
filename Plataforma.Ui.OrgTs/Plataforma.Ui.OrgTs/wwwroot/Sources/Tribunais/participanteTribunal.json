@@ -1,0 +1,60 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Tribunal_Participante/selecionarTodos",
+    "colunas": [
+      {
+        "data": "pessoa.nome_fantasia_apelido",
+        "title": "Nome"
+      },
+      {
+        "data": "funcao.nome",
+        "title": "Função"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Tribunal_Participante/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../menu/PaginasMenuSelecionarTodos",
+        "colunas": [
+          {
+            "data": "pessoa.nome_fantasia_apelido",
+            "title": "Nome"
+          },
+          {
+            "data": "cadastro_oab",
+            "title": "OAB"
+          },
+          {
+            "data": "data_inicio",
+            "title": "Inicio"
+          },
+          {
+            "data": "data_termino",
+            "title": "Termino"
+          },
+          {
+            "data": "id_funcao",
+            "title": "Funcao"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../menu/paginas-menus-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Chancelaria_Nacionalidade/selecionarTodos",
+    "colunas": [
+      {
+        "data": "nome_pais",
+        "title": "Nome da Nacionalidade"
+      },
+      {
+        "data": "codigo",
+        "title": "Codigo da Nacionalidade"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Chancelaria_Nacionalidade/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../menu/PaginasMenuSelecionarTodos",
+        "colunas": [
+          {
+            "data": "nome_pais",
+            "title": "Nome da Nacionalidade"
+          },
+          {
+            "data": "codigo",
+            "title": "Codigo da Nacionalidade"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../menu/paginas-menus-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

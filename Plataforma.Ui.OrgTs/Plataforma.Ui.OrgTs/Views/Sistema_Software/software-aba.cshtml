@@ -1,0 +1,95 @@
+﻿@model Plataforma.Ui.OrgTs.ViewModel.Sistema.SoftwareViewModel
+@{
+    Layout = null;
+
+    Software dados = Model.software ?? new Software();
+
+    // Botões para o menu detalhes da aba solicitada
+
+    BtMenuDetalhes dadosMenu = new BtMenuDetalhes()
+    {
+        listaPermissoesMenuUtilitarios = Model.listaPermissoesMenus,
+        ListaMenuDetalhes = new List<MenuDetalhes>()
+        {
+        new MenuDetalhes(){Id = dados.id_software, Tipo = "salvar", Visivel = true},
+        new MenuDetalhes(){Id = dados.id_software, Tipo = "cancelar", Visivel = true, Url = "Sistema_Software/software-aba"},
+        new MenuDetalhes(){Id = dados.id_software, Tipo = "incluir", Visivel = true},
+        new MenuDetalhes(){Id = dados.id_software, Tipo = "deletar", Visivel = true},
+        new MenuDetalhes(){Id = dados.id_software, Tipo = "atualizar", Visivel = true }
+        }
+    };
+    Regex regex = new Regex(@"\d\d/\d\d/\d\d\d\d");
+    Match data_aquisicao = regex.Match(dados.data_aquisicao.ToString());
+
+    Regex regex2 = new Regex(@"\d\d/\d\d/\d\d\d\d");
+    Match data_vencimento = regex2.Match(dados.data_vencimento.ToString());
+
+}
+
+<section class="conteudo-aba">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <h1>Software</h1>
+            </div>
+            <partial name="menus/MenuDetalhes" model='dadosMenu' />
+        </div>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4">
+        <h6>* Campos Obrigatórios</h6>
+    </div>
+
+    <div class="row">
+        <form class="col-lg-12 col-md-12 col-sm-12" action="Sistema_Software/software-aba">
+            @Html.AntiForgeryToken()
+            <div class="col-md-8">
+
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label for="nome_software">Nome do Software*</label>
+                        <input type="text" class="form-control" name="nome_software" tabindex="1" readonly placeholder="Informe o Nome do software" id="nome_software" value="@dados.nome_software">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="versao_software">Versão do Software*</label>
+                        <input type="text" class="form-control" name="versao_software" tabindex="2" readonly placeholder="Informe a versão do software" id="versao_software" value="@dados.versao_software">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label for="fabricante">Fabricante*</label>
+                        <input type="text" class="form-control" name="fabricante" tabindex="3" readonly placeholder="Informe o fabricante" id="fabricante" value="@dados.fabricante">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="open_source">Open Source?*</label><br />
+                        <label><input type="radio" name="open_source" tabindex="4" disabled id="open_source" value="true" @if (dados.open_source == true) { @Html.Raw("checked") ; }> Sim</label>
+                        <span class="margin-right-10 margin-left-10"> - </span>
+                        <label><input type="radio" name="open_source" tabindex="4" disabled id="open_source" value="false" @if (dados.open_source == false) { @Html.Raw("checked") ; }> Não</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label for="data_aquisicao">Data de Aquisição*</label>
+                        <input type="text" class="form-control" name="data_aquisicao" tabindex="3" readonly placeholder="Informe a data de aquisição" id="data_aquisicao" value="@data_aquisicao">
+                        <small>Exemplo de data: 00/00/0000</small> </br>
+                        <small>Obrigatório seguir o exemplo acima</small>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="data_vencimento">Data de Vencimento*</label>
+                        <input type="text" class="form-control" name="data_vencimento" tabindex="3" readonly placeholder="Informe a data de vencimento" id="data_vencimento" value="@data_vencimento">
+                        <small>Exemplo de data: 00/00/0000</small> </br>
+                        <small>Obrigatório seguir o exemplo acima</small>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</section>

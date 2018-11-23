@@ -1,0 +1,48 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_Pais/selecionarTodos",
+    "colunas": [
+      {
+        "data": "nome",
+        "title": "Nome do Pais"
+      },
+      {
+        "data": "codigo_telefone",
+        "title": "Código Telefone"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_Pais/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../menu/PaginasMenuSelecionarTodos",
+        "colunas": [
+          {
+            "data": "nome",
+            "title": "Nome do Pais"
+          },
+          {
+            "data": "codigo_telefone",
+            "title": "Código Telefone"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../menu/paginas-menus-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

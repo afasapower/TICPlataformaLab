@@ -1,0 +1,238 @@
+﻿
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <environment names="Development">
+        <base href="http://localhost:56836/" target="_blank">
+    </environment>
+    <title>Uni-FACEF | Sistema Laboratório</title>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-sweetalert/dist/sweetalert.css" rel="stylesheet" />
+    <link href="~/lib/datatables/media/css/dataTables.bootstrap4.css" rel="stylesheet" />
+
+    <link href="~/lib/datatables/media/css/buttons.dataTables.css" rel="stylesheet" />
+    <link href="~/lib/datatables/media/css/buttons.bootstrap4.css" rel="stylesheet" />
+
+    <link href="~/css/source/components/pagination.css" rel="stylesheet" />
+    <link href="~/lib/fullcalendar/dist/fullcalendar.css" rel="stylesheet" />
+
+
+    <link href="~/lib/chartist/dist/chartist.css" rel="stylesheet" />
+    <link href="~/lib/summernote-0.8.6/dist/summernote.css" rel="stylesheet" />
+    <link href="~/lib/summernote-0.8.6/dist/plugin/databasic/summernote-ext-databasic.css" rel="stylesheet" />
+
+    <link href="~/lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
+    <link href="~/lib/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css" rel="stylesheet" />
+
+    <link href="~/lib/bootstrap-toggle/css/bootstrap-toggle.min.css" rel="stylesheet" />
+    <link href="~/css/source/forms/checkboxes-radio.css" rel="stylesheet" />
+
+
+    <link href="~/css/source/main.css" rel="stylesheet" />
+    <link href="~/css/menu-topo.css" rel="stylesheet" />
+    <link href="~/css/modulos.css" rel="stylesheet" />
+    <link href="~/css/sub-menus.css" rel="stylesheet" />
+    <link href="~/css/tela-inicial.css" rel="stylesheet" />
+
+
+    @RenderSection("estilos", required: false)
+
+</head>
+
+
+<body class="theme-default">
+    <div id="envolucroCarregador">
+        <div id="carregadorGeral"></div>
+    </div>
+        <partial name="Topo" />
+
+    <div class="body-content">
+            @RenderBody()
+
+        <footer class="row">
+            <div class="center">
+                <p>Todos os direitos reservados - Alunos do Uni-FACEF Departamento de Computação</p>
+            </div>
+        </footer>
+    </div>
+    
+    <environment names="Development">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        @*<script src="~/lib/jquery/dist/jquery.js"></script>*@
+        @RenderSection("scripts", required: false)
+
+        <script src="~/lib/tether/dist/js/tether.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/lib/bootstrap-sweetalert/dist/sweetalert.js"></script>
+
+        <script src="~/lib/datatables/media/js/jquery.dataTables.js"></script>
+        <script src="~/lib/datatables/media/js/dataTables.bootstrap4.js"></script>
+        <script src="~/lib/datatables-responsive/js/dataTables.responsive.js"></script>
+
+        <script src="~/lib/datatables/media/js/dataTables.buttons.min.js"></script>
+        <script src="~/lib/datatables/media/js/buttons.flash.min.js"></script>
+        <script src="~/lib/datatables/media/js/buttons.html5.min.js"></script>
+        <script src="~/lib/datatables/media/js/buttons.print.min.js"></script>
+        <script src="~/lib/datatables/media/js/buttons.bootstrap4.min.js"></script>
+        <script src="~/lib/datatables-fixedcolumns/js/dataTables.fixedColumns.js"></script>
+        <script src="~/lib/datatables/media/js/dataTables.scroller.min.js"></script>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+        <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+        <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+
+
+        <script src="~/lib/bootstrap-select/dist/js/bootstrap-select.js"></script>
+
+
+        <script src="~/lib/moment/min/moment.min.js"></script>
+
+
+        <script src="~/lib/fullcalendar/dist/fullcalendar.min.js"></script>
+        <script src="~/lib/fullcalendar/dist/lang-all.js"></script>
+
+        <script src="~/lib/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js"></script>
+
+        <script src="~/lib/chartist/dist/chartist.min.js"></script>
+        <script src="~/lib/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.js"></script>
+        <script src="~/lib/chartist-plugin-pointlabels/dist/chartist-plugin-pointlabels.js"></script>
+        <script src="~/lib/chartist-plugin-axistitle/dist/chartist-plugin-axistitle.js"></script>
+        <script src="~/lib/chartist-plugin-legend/chartist-plugin-legend.js"></script>
+
+        <script src="~/lib/summernote-0.8.6/dist/summernote.js"></script>
+        <script src="~/lib/summernote-0.8.6/dist/lang/summernote-pt-BR.js"></script>
+        <script src="~/lib/summernote-0.8.2/dist/plugin/summernote-ext-print-master/summernote-ext-print.js"></script>
+        <script src="~/lib/summernote-0.8.6/dist/plugin/summernote-cleaner/summernote-cleaner.js"></script>
+
+        <script src="~/lib/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
+
+
+        <script src="~/lib/bootstrap-fileStyle/src/bootstrap-filestyle.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+        <script src="~/lib/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js"></script>
+
+        <script src="~/lib/jquery.fileDownload/jquery.fileDownload.js"></script>
+
+        @*<script src="~/js/Listas.js"></script>
+        <script src="~/js/menuAbaScroll.js"></script>
+        <script src="~/js/Navegacao.js"></script>
+
+        <script src="~/js/Erros.js"></script>
+        <script src="~/js/Calendario.js"></script>
+        <script src="~/js/Graficos.js"></script>
+        <script src="~/js/Contas.js"></script>
+        <script src="~/js/EditorTexto.js"></script>
+        <script src="~/js/Formularios.js"></script>
+        <script src="~/js/geral.js"></script>*@
+
+        @*<script src="~/js/MenuEdicaoAbas.js"></script>*@
+        <script src="~/js/min/teste/EditorTexto.min.js"></script>
+        <script src="~/js/min/teste/Contas.min.js"></script>
+        <script src="~/js/min/teste/Graficos.min.js"></script>
+        <script src="~/js/min/teste/Calendario.min.js"></script>
+        <script src="~/js/min/teste/Erros.min.js"></script>
+        <script src="~/js/min/teste/Listas.min.js"></script>
+        <script src="~/js/min/teste/menuAbaScroll.min.js"></script>
+        <script src="~/js/min/teste/MenuEdicaoAbas.min.js"></script>
+        <script src="~/js/min/teste/Formularios.min.js"></script>
+        <script src="~/js/min/teste/Navegacao.min.js"></script>
+
+        <script src="~/js/min/teste/geral.min.js"></script>
+
+    </environment>
+
+
+
+    <environment names="Staging,Production">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+        <script src="~/lib/tether/dist/js/tether.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/lib/bootstrap-sweetalert/dist/sweetalert.js"></script>
+
+        <script src="~/lib/datatables/media/js/jquery.dataTables.js"></script>
+        <script src="~/lib/datatables/media/js/dataTables.bootstrap4.js"></script>
+        <script src="~/lib/datatables-responsive/js/dataTables.responsive.js"></script>
+
+        <script src="~/lib/datatables/media/js/dataTables.buttons.min.js"></script>
+        <script src="~/lib/datatables/media/js/buttons.flash.min.js"></script>
+        <script src="~/lib/datatables/media/js/buttons.html5.min.js"></script>
+        <script src="~/lib/datatables/media/js/buttons.print.min.js"></script>
+        <script src="~/lib/datatables/media/js/buttons.bootstrap4.min.js"></script>
+        <script src="~/lib/datatables-fixedcolumns/js/dataTables.fixedColumns.js"></script>
+        <script src="~/lib/datatables/media/js/dataTables.scroller.min.js"></script>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+        <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+        <script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+
+        <script src="~/lib/bootstrap-select/dist/js/bootstrap-select.js"></script>
+
+        <script src="~/lib/moment/min/moment.min.js"></script>
+
+        <script src="~/lib/fullcalendar/dist/fullcalendar.min.js"></script>
+        <script src="~/lib/fullcalendar/dist/lang-all.js"></script>
+
+        <script src="~/lib/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js"></script>
+
+        <script src="~/lib/chartist/dist/chartist.min.js"></script>
+        <script src="~/lib/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.js"></script>
+        <script src="~/lib/chartist-plugin-pointlabels/dist/chartist-plugin-pointlabels.js"></script>
+        <script src="~/lib/chartist-plugin-axistitle/dist/chartist-plugin-axistitle.js"></script>
+        <script src="~/lib/chartist-plugin-legend/chartist-plugin-legend.js"></script>
+
+
+        <script src="~/lib/summernote-0.8.6/dist/summernote.js"></script>
+        <script src="~/lib/summernote-0.8.6/dist/lang/summernote-pt-BR.js"></script>
+        <script src="~/lib/summernote-0.8.2/dist/plugin/summernote-ext-print-master/summernote-ext-print.js"></script>
+        <script src="~/lib/summernote-0.8.6/dist/plugin/summernote-cleaner/summernote-cleaner.js"></script>
+
+        <script src="~/lib/bootstrap-fileStyle/src/bootstrap-filestyle.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+        <script src="~/lib/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js"></script>
+
+        <script src="~/lib/jquery.fileDownload/jquery.fileDownload.js"></script>
+
+        <script src="~/lib/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
+
+        @*<script src="~/js/dist/EditorTexto.js"></script>
+        <script src="~/js/dist/Contas.js"></script>
+        <script src="~/js/dist/Graficos.js"></script>
+        <script src="~/js/dist/Calendario.js"></script>
+        <script src="~/js/dist/Erros.js"></script>
+        <script src="~/js/dist/Listas.js"></script>
+        <script src="~/js/dist/menuAbaScroll.js"></script>
+        <script src="~/js/dist/MenuEdicaoAbas.js"></script>
+        <script src="~/js/dist/Formularios.js"></script>
+        <script src="~/js/dist/Navegacao.js"></script>
+        <script src="~/js/dist/geral.js"></script>*@
+
+        <script src="~/js/min/all.js"></script>
+
+        @RenderSection("scripts", required: false)
+
+
+    </environment>
+    @RenderSection("modal", required: false)    
+
+    <div id="aviso-sem-internet">
+        <div id="faixa-sem-internet" >
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4 padding-top-25 text-center">
+                    <span class="icmn-earth font-size-70 color-primary background-white padding-5" style="border-radius:40px;"></span>
+                    <h3 class="padding-top-20 color-danger"><span class="background-white padding-3">SEM CONEXÃO COM A INTERNET </span></h3>
+                    <p class="font-size-16 color-secondary"><span class="background-white padding-3 margin-bottom-3">Verifique se o cabo da internet está conectado, o sinal do wifi está chegando ou se existe alguma restrição no firewall, caso o problema persista contate o técnico responsavel.</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

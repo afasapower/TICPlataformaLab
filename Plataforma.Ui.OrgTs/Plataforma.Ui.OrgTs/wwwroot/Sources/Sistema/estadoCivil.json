@@ -1,0 +1,48 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_EstadoCivil/selecionarTodos",
+    "colunas": [
+      {
+        "data": "codigo",
+        "title": "Codigo"
+      },
+      {
+        "data": "descricao",
+        "title": "Descrição"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_EstadoCivil/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../menu/PaginasMenuSelecionarTodos",
+        "colunas": [
+          {
+            "data": "codigo",
+            "title": "Codigo"
+          },
+          {
+            "data": "descricao",
+            "title": "Descrição"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../menu/paginas-menus-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

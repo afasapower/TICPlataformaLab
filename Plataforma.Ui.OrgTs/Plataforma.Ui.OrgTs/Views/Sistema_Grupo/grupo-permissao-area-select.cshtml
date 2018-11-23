@@ -1,0 +1,42 @@
+﻿@model Plataforma.Ui.OrgTs.ViewModel.Sistema.GrupoViewModel
+@{
+    Layout = null;
+    List<Menu_Sub> dadosSubMenu = Model.listaMenuSub;
+    List<Retorno_Permissao_Grupo_Pagina> dadosGrupoPermissaoPag = Model.listaPermissaoGrupoPaginas;
+}
+
+<div class="form-group col-md-4">
+    <label for="modulos_select">Páginas disponíveis</label><br />
+    <select class="select-lista-titan  form-control" id="paginas_disponiveis" data-titan-parceiro="paginas_selecionadas" disabled size="20" multiple>        
+        @foreach (var item in dadosSubMenu)
+        {
+            <option value="@item.id_pagina">@item.nome</option>
+        }
+    </select>
+</div>
+<div class="form-group col-md-1">
+    <div class="row">
+        <div class="col-md-12" style="margin-top:150px;">     
+            <div class="center-block" style="width:58px;">
+                <button type="button" disabled class="btn btn-icon btn-info btn-lg margin-top-10 bt-select-lista-titan" data-titan-lista-origem="paginas_disponiveis" data-titan-parceiro="paginas_selecionadas"><i class="icmn-arrow-right" aria-hidden="true"></i></button>
+                <button type="button" disabled class="btn btn-icon btn-info btn-lg margin-top-10 bt-select-lista-titan" data-titan-lista-origem="paginas_selecionadas" data-titan-parceiro="paginas_disponiveis"><i class="icmn-arrow-left" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="form-group col-md-4">
+    <label for="modulos_select">Páginas selecionadas</label><br />
+    <select class="select-lista-titan form-control" id="paginas_selecionadas" name="paginas_selecionadas" disabled data-titan-parceiro="paginas_disponiveis" size="20" multiple>
+        @foreach (var itens in dadosGrupoPermissaoPag)
+        {
+            <option value="@itens.id_pagina">@itens.nome_pagina</option>
+        }
+    </select>
+</div>
+
+<div class="col-md-3">
+    <p class="font-size-16 margin-bottom-5">Permissões</p>
+    <div class="well min-height-150" id="area-permissoes">
+            
+    </div>
+</div>

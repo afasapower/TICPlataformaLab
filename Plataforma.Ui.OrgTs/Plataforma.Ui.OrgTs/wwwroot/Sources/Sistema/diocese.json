@@ -1,0 +1,74 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_Diocese/selecionarTodos",
+    "colunas": [
+      {
+        "data": "razao_social_nome",
+        "title": "Nome"
+      },
+      {
+        "data": "data_inclusao",
+        "title": "Data de inclusão"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_Diocese/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../Sistema_Diocese/EnderecoSelecionarTodos",
+        "colunas": [
+          {
+            "data": "tipo_Enderecamento.nome",
+            "title": "Tipo"
+
+          },
+          {
+            "data": "endereco",
+            "title": "Logradouro"
+          },
+          {
+            "data": "bairro",
+            "title": "Bairro"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Sistema_Diocese/endereco-aba" ],
+        "botoes": [ "excel" ]
+      },
+      {
+        "url": "../Sistema_Diocese/ApiSelecionarTodos",
+        "colunas": [
+          {
+            "data": "usuario_api",
+            "title": "Usuário api"
+
+          },
+          {
+            "data": "rules",
+            "title": "Rules"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Sistema_Diocese/dadosapi-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

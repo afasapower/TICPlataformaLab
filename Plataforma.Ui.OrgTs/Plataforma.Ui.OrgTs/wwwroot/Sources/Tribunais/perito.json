@@ -1,0 +1,48 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Tribunal_Perito/selecionarTodos",
+    "colunas": [
+      {
+        "class": "never",
+        "data": null
+      },
+      {
+        "data": "nome",
+        "title": "Nome"
+      },
+      {
+        "data": "numero",
+        "title": "Número do processo"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Tribunal_Perito/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../menu/PaginasMenuSelecionarTodos",
+        "colunas": [
+          {
+            "data": "nome",
+            "title": "Nome"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../menu/paginas-menus-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

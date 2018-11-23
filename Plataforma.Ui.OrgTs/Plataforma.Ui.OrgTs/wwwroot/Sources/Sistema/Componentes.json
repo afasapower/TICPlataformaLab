@@ -1,0 +1,20 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Componentes/selecionarTodos",
+    "colunas": [
+      {
+        "data": "nome",
+        "title": "Descrição"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Componentes/index" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {}
+}

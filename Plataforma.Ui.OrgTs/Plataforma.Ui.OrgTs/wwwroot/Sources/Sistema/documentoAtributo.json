@@ -1,0 +1,44 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_DocumentoAtributo/selecionarTodos",
+    "colunas": [
+      {
+        "data": "nome",
+        "title": "Documento"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_DocumentoAtributo/interno" ],
+    "botoes": []
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../Sistema_DocumentoAtributo/AtributosSelecionarTodos",
+        "colunas": [
+          {
+            "data": "alias",
+            "title": "Alias"
+          },
+          {
+            "data": "nome_coluna",
+            "title": "Coluna"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Sistema_DocumentoAtributo/documento-sistema-atributo-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

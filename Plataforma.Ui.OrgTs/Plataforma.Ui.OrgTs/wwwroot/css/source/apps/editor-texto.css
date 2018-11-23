@@ -1,0 +1,84 @@
+﻿.note-editor.note-frame {
+   background-color:#eaeaea;
+}
+.note-editing-area {
+    padding: 30px;
+    
+}
+    .note-editing-area .panel-body {
+        box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.3);
+        /*padding: 40px 60px 40px 60px !important;*/
+        max-width: 853px;
+        /*background: url('../../../images/modulos/page-break-editor-texto.gif');*/
+    }
+
+
+
+/* Editor de texto */
+/*.editor-titan-editor {
+    background: url('../../../images/modulos/page-break-editor-texto.gif');
+    padding: 40px 60px 40px 60px;
+}*/
+
+.margem-edicao-inativo {
+    background: url('../../../images/modulos/page-break-editor-texto.gif') !important;
+    padding: 40px 60px 40px 60px !important;
+}
+
+
+.editor-titan {
+    background: #fff;
+    border-radius: 3px 3px 0px 0px;
+    border: 1px solid #dfe4ed;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 1080px;
+    min-width: 853px;
+    width: 853px;
+    padding: 0px;
+    
+}
+.note-editor.note-frame .note-editing-area .note-editable 
+{
+    padding: 40px 60px 40px 60px;
+    background: url('../../../images/modulos/page-break-editor-texto.gif');
+    /*padding: 0px !important;*/
+}
+.involucro-bt-print-editor {
+    width: 853px;
+    background: #f2f4f8;
+    margin-top: 10px;
+}
+.editor-titan-ocultar 
+{
+    height: 0px;
+    border: none !important;
+    overflow: auto;
+}
+.titan-impressao-documento 
+{
+    padding-left: 81px !important;
+    padding-right: 27px !important;
+}
+
+/*summernote*/
+table.table-dashed, table td.table-dashed, table th.table-dashed {
+    border: 1px dashed #ccc;
+}
+
+.titan-impressao-documento table.table-dashed, .titan-impressao-documento table td.table-dashed, .titan-impressao-documento table th.table-dashed {
+    border: none !important;
+}
+
+@media print 
+{
+
+    table.table-dashed, table td.table-dashed, table th.table-dashed {
+        border: none !important;
+    }
+
+    .titan-impressao-documento {
+        padding-left: 81px !important;
+        padding-right: 27px !important;
+    }
+}

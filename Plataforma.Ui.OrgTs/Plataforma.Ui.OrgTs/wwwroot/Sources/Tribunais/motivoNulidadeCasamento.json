@@ -1,0 +1,40 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Tribunal_MotivoNulidadeCasamento/selecionarTodos",
+    "colunas": [
+      {
+        "data": "descricao",
+        "title": "Descrição"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Tribunal_MotivoNulidadeCasamento/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../menu/PaginasMenuSelecionarTodos",
+        "colunas": [
+          {
+            "data": "descricao",
+            "title": "Descricao"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../menu/paginas-menus-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

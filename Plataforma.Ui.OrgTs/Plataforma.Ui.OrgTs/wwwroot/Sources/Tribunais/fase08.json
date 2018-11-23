@@ -1,0 +1,73 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Tribunal_Fase08Processo/selecionarTodos",
+    "colunas": [
+      {
+        "class": "never",
+        "data": null
+      },
+      {
+        "data": "processo.nome",
+        "title": "Nome"
+      },
+      {
+        "data": "processo.numero",
+        "title": "Número do processo"
+      },
+      {
+        "class": "never",
+        "data": "id_processo",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Tribunal_Fase08Processo/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../Tribunal_Fase08Processo/DocDemandadoSelecionarTodos",
+        "colunas": [
+          {
+            "data": "titulo",
+            "title": "Nome do arquivo"
+          },
+          {
+            "data": "tipo_Arquivo.descricao",
+            "title": "Tipo de documento"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Tribunal_Fase08Processo/demandado-aba" ],
+        "botoes": [ "excel" ]
+      },
+      {
+        "url": "../Tribunal_Fase08Processo/DocDemandanteSelecionarTodos",
+        "colunas": [
+          {
+            "data": "titulo",
+            "title": "Nome do arquivo"
+          },
+          {
+            "data": "tipo_Arquivo.descricao",
+            "title": "Tipo de documento"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Tribunal_Fase08Processo/demandante-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+    
+}

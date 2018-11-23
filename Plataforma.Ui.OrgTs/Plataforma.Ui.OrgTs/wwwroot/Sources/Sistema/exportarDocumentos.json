@@ -1,0 +1,23 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_ExportarDocumentos/selecionarTodos",
+    "colunas": [
+      {
+        "data": "nome_fantasia_apelido",
+        "title": "Nome do tribunal"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_ExportarDocumentos/interno" ],
+    "botoes": []
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": []
+  }
+}

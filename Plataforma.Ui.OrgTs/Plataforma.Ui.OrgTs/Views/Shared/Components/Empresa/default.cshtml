@@ -1,0 +1,33 @@
+﻿@model Plataforma.Ui.OrgTs.ViewModel.Sistema.EmpresaAtivaUsuarioViewModel
+@{
+    // Dados do usuario do banco
+    List<Usuario_Empresa> dados = Model.listaUsuarioEmpresa;
+    Usuario_Empresa_Ativo dadosUsuarioAtivo = Model.usuarioEmpresaAtivo ?? new Usuario_Empresa_Ativo();
+
+}
+<div id="select-topo-menu" class="col-md-7 col-lg-5 col-sm-8">
+
+    <select class="selectpicker" data-live-search="true" data-width="auto" data-size="7">
+      @if(dados.Count > 0)
+      {
+            foreach (var item in dados)
+            {
+                if (item.id_pessoa_empresa == dadosUsuarioAtivo.id_pessoa_empresa)
+                {
+                    <option value="@item.id_pessoa_empresa" selected>@item.Pessoa_Empresa.nome_fantasia_apelido</option>
+                }
+                else
+                {
+                    <option value="@item.id_pessoa_empresa">@item.Pessoa_Empresa.nome_fantasia_apelido</option>
+                }
+
+            }
+      }
+      else
+      {
+            <option value="@Guid.Empty">Nenhuma empresa encontrada</option>
+      }
+
+
+    </select>
+</div>

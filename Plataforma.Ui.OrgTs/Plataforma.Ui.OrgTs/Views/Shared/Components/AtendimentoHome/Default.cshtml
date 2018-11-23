@@ -1,0 +1,111 @@
+﻿@{
+    List<SelectListItem> assuntos = new List<SelectListItem>()
+        {
+            new SelectListItem(){Text = "Auditoria", Value = "Auditoria"},
+            new SelectListItem(){Text="Conversão de Dados", Value="Conversão de Dados"},
+            new SelectListItem(){Text="Copia Banco de Dados", Value="Copia Banco de Dados"},
+            new SelectListItem(){Text="Desenvolvimento", Value="Desenvolvimento"},
+            new SelectListItem(){Text="Duvida", Value="Dúvida"},
+            new SelectListItem(){Text="Falha de usuário no login", Value="Falha de usuário no login"},
+            new SelectListItem(){Text="Falha de usuário no sistema", Value="Falha de usuário no sistema"},
+            new SelectListItem(){Text="Falha no sistema", Value="Falha no sistema"},
+            new SelectListItem(){Text="Inclusão de registro", Value="Inclusão de registro"},
+            new SelectListItem(){Text="Instalação", Value="Instalação"},
+            new SelectListItem(){Text="Medição internet", Value="Medição internet"},
+            new SelectListItem(){Text="Pós - atendimento", Value="Pós - atendimento"},
+            new SelectListItem(){Text="Reinstalação", Value="Reinstalação"},
+            new SelectListItem(){Text="Treinamento presencial", Value="Treinamento presencial"},
+            new SelectListItem(){Text="Treinamento remoto", Value="Treinamento remoto"},
+            new SelectListItem(){Text="Visita", Value="Visita"}
+        };
+}
+<div class="col-md-12">
+    <section class="panel panel-with-sidebar panel-with-right-sidebar atendimeno">
+        <div class="panel-sidebar">
+            <h2>Abrir chamado</h2>
+            <form action="Home/ContatoAtendimento" id="form-atendimento">
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    <label for="id_valor_processo">Assunto</label><br />
+                    <select class="select-titan" name="assunto" id="assunto">
+                        <option value="">Selecione um assunto</option>
+                        @foreach (var item in assuntos)
+                        {
+                            <option value="@item.Value">@item.Text</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="descricao-chamado">Descrição do chamado</label>
+                    <textarea class="form-control" id="descricao_chamado" name="descricao_chamado" spellcheck="true" rows="11"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-success pull-right" id="salva-agendamento-modal">Enviar chamado</button>
+                </div>
+            </form>
+            <div class="row">
+                <div class="col-lg-12 dados-contato">
+                    <h3><span class="icmn-headset"></span> (16) 2103-6166 </h3><p>De seg à sex 08h00 às 18h00</p>
+                    <h4><span class="icmn-envelop"></span>curias@orgsystem.com.br</h4>
+                </div>
+            </div>
+        </div>
+        <div class="panel-heading">
+            <h2>Atendentes</h2>
+        </div>
+        <div class="panel-body atendentes">
+            <ul>
+                <li>
+                    <div class="col-md-3">
+                        <div class="avatar center-block vertical-align-middle"><img src="~/images/orgsystem/atendentes/silvia.jpg" class="vertical-align-middle" /></div>
+                    </div>
+                    <div class="col-md-9 item-lista">
+                        <h6>Silvia Marcia do Nascimento Moreira</h6>
+                        <p>Analista folha de pagamento</p>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="col-md-3">
+                        <div class="avatar center-block vertical-align-middle"><img src="~/images/orgsystem/atendentes/vinicius.jpg" class="vertical-align-middle" /></div>
+                    </div>
+                    <div class="col-md-9 item-lista">
+                        <h6>Vinicius Lopes</h6>
+                        <p>Instalação/Suporte técnico</p>
+                    </div>
+                </li>
+             
+
+                <li>
+                    <div class="col-md-3">
+                        <div class="avatar center-block vertical-align-middle"><img src="~/images/orgsystem/atendentes/leticia.jpg" class="vertical-align-middle" /></div>
+                    </div>
+                    <div class="col-md-9 item-lista">
+                        <h6>Letícia Coelho Pereira</h6>
+                        <p>Atendimento pastoral</p>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+</div> 
+
+
+<div class="modal fade" id="modal-atendimento-home" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Atenção!</h4>
+            </div>
+            <div class="modal-body">
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+<script src="~/js/sistema/atendimento-home.js"></script>
+}

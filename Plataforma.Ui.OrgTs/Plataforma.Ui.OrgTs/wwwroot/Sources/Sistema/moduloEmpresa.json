@@ -1,0 +1,40 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../ModuloEmpresa/selecionarTodos",
+    "colunas": [
+      {
+        "data": "razao_social_nome",
+        "title": "Nome"
+      },
+      {
+        "class": "never",
+        "data": "id_pessoa",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../ModuloEmpresa/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../ModuloEmpresa/selecionarModuloTodos",
+        "colunas": [
+          {
+            "data": "modulo.nome",
+            "title": "Módulo"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../ModuloEmpresa/moduloEmpresa-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

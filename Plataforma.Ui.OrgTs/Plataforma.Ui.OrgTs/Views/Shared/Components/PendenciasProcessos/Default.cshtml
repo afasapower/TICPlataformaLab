@@ -1,0 +1,54 @@
+﻿@model Plataforma.Ui.OrgTs.ViewModel.Components.PendenciasProcessosItensViewModel
+@{ 
+    List<dynamic> listaPendencias = Model.ListaPendencias;
+    decimal totalProcesso = Model.TotalProcessosTribunal;
+    int corCount = 0;
+    List<string> corBarras = new List<string>()
+    {
+        "progress-success",
+        "progress-info",
+        "progress-warning",
+        "progress-danger",
+        "progress-default",
+        "progress-primary",
+        "progress-secondary"
+    };
+}
+<div class="col-md-12">
+    <section class="panel">
+        <div class="panel-heading">
+            <h2>Pendências</h2>
+        </div>
+        <div class="panel-body pendencias" style="height:195px; overflow-x:hidden; overflow-y:auto;">
+            @if (listaPendencias.Count > 0 && totalProcesso > 0)
+            {
+                foreach (var item in listaPendencias)
+                {
+                    decimal totalEtapa = (decimal)item.GetType().GetProperty("total").GetValue(item, null);
+                    decimal percentualEtapa = Math.Round((totalEtapa / totalProcesso) * 100);
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h6>@item.GetType().GetProperty("etapa").GetValue(item, null)</h6>
+                            <progress class="progress @corBarras[corCount]" value="@percentualEtapa" max="100">@percentualEtapa% </progress>
+                        </div>
+                        <div class="col-md-2 text-center"><h5>@percentualEtapa%</h5></div>
+                    </div>
+                    corCount += 1;
+                    if (corCount == corBarras.Count) { corCount = 0; }
+                }
+            }
+            else
+            {
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="col-md-12">
+                            <h5 class="padding-top-50">Nenhum processo cadastrado.</h5>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </section>
+</div>
+

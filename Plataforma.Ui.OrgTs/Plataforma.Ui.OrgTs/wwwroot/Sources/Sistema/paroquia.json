@@ -1,0 +1,133 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_Paroquia/selecionarTodos",
+    "colunas": [
+      {
+        "data": "pessoa.razao_social_nome",
+        "title": "Nome"
+      },
+      {
+        "data": "data_inclusao",
+        "title": "Data de inclusão"
+      },
+      {
+        "class": "never",
+        "data": "id_pessoa",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_Paroquia/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../Sistema_Paroquia/ParoquiaFormasRecebimentoTodos",
+        "colunas": [
+          {
+            "data": "forma_Recebimento.descricao",
+            "title": "Nome"
+          },
+          {
+            "data": "data_inclusao",
+            "title": "Data de inclusão"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Sistema_Paroquia/paroquia-formas-recebimento-aba" ],
+        "botoes": [ "excel" ]
+      },
+      {
+        "url": "../Sistema_Paroquia/ParoquiaApiSelecionarTodos",
+        "colunas": [
+          {
+            "data": "usuario_api",
+            "title": "Usuário api"
+          },
+          {
+            "data": "rules",
+            "title": "Regras"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Sistema_Paroquia/paroquia-api-aba" ],
+        "botoes": [ "excel" ]
+      },
+      {
+        "url": "../Sistema_Paroquia/EnderecoSelecionarTodos",
+        "colunas": [
+          {
+            "data": "tipo_Enderecamento.nome",
+            "title": "Tipo"
+
+          },
+          {
+            "data": "endereco",
+            "title": "Endereço"
+          },
+          {
+            "data": "bairro",
+            "title": "Bairro"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Sistema_Paroquia/endereco-aba" ],
+        "botoes": [ "excel" ]
+      },
+      {
+        "url": "../Sistema_Paroquia/TelefoneSelecionarTodos",
+        "colunas": [
+          {
+            "data": "telefone",
+            "title": "Telefone"
+          },
+          {
+            "data": "tipo_Telefone.nome",
+            "title": "Tipo de Telefone"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Sistema_Paroquia/telefone-aba" ],
+        "botoes": [ "excel" ]
+      },
+      {
+        "url": "../Sistema_Paroquia/EmailSelecionarTodos",
+        "colunas": [
+          {
+            "data": "email",
+            "title": "E-mail"
+          },
+          {
+            "data": "tipo_Email.nome",
+            "title": "Tipo de E-mail"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Sistema_Paroquia/email-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}                                     

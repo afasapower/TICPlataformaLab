@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Grupo";
+    string[,] urlsend = new string[,]
+    {
+       { "GRUPO", "Sistema_Grupo/grupo-aba","-1"},
+       { "PERMISSÕES", "Sistema_Grupo/grupo-permissao-aba","0"},
+       { "PERMISSÃO DE GRUPO POR ETAPA", "Sistema_Grupo/permissao-grupo-etapa-aba","1"}
+    };
+}
+@section scripts
+{    
+    <script src="~/js/min/sistema/grupo.js"></script>
+}
+
+<partial name="menus/MenuAbasAtivos" />
+
+<section class="page-content">    
+        <section class="page-content-inner">
+            <partial name="menus/MenuUtilitarios" model='new MenuUtilitariosViewModel() { listaPermissoesMenuUtilitarios = new List<Retorno_Permissao_Grupo_Usuario>(), menuUtilitario = new string[,] { { "voltar", "Sistema_Grupo" } } }' />
+        </section>
+        <!-- Menu abas paginas internas -->
+        <partial name="menus/MenuAbaspaginas" model='urlsend' />
+        <!-- Fim Menu abas paginas internas -->
+        <section class="page-content-inner">
+            <section class="panel">
+                <div class="panel-body">
+                    <div>
+                        <div class="tab-content padding-vertical-20">
+                            @for (int i = 0; i < urlsend.GetLength(0); i++)
+                            {
+                                <div class="tab-pane" id="secao-@i" role="tabpanel" aria-expanded="false"></div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="page-content-inner lista-abas inativo">
+            <section class="panel">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <table id="lista-abas" class="table table-hover nowrap" cellspacing="0" style="width:100%;"></table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+</section>

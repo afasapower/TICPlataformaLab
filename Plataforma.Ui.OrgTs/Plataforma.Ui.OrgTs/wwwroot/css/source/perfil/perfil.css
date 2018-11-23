@@ -1,0 +1,22 @@
+/*
+ * PERFIL
+ */
+
+.titan-panel-perfil {
+    padding: 10px 10px 10px 10px;
+    background-color: #fbfbfb;
+    margin: 0px 0px 0px;
+    border: 1px solid #e2e2e2;
+}
+
+.titan-input-perfil {
+    background-color: #fff !important;
+    box-shadow: 0px 0px 10px 0px white !important;
+}
+
+.objectImage img {
+    max-width: 140px;
+    max-height: 140px;
+    width: auto;
+    height: auto;
+}

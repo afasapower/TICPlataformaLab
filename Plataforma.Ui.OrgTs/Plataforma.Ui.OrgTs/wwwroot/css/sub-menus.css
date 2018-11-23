@@ -1,0 +1,129 @@
+﻿.involucro-menu 
+{
+    position:relative;
+    margin:0 auto;
+    overflow:hidden;
+	padding:5px;
+  	min-height:35px;
+}
+.lista-menu {
+    position:absolute;
+    left:0px;
+    top:0px;
+  	min-width:3000px;
+  	margin-left:12px;
+    margin-top:0px;
+}
+
+.scroller {
+  text-align:center;
+  cursor:pointer;
+  display:none;
+  padding:7px;
+  padding-top:11px;
+  white-space:nowrap;
+  vertical-align:middle;  
+}
+
+.scroller-right{ float:right; }
+.scroller-left{ float:left; }
+
+/* Menu abas ativas */
+
+#menu-abas-modulos
+{
+    height: 51px;
+    box-shadow: inset 0px 25px 37px -2px rgba(0,0,0,0.25);
+    background-color: #bababa;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 15px;
+    padding-top: 15px;
+}
+#menu-abas-modulos a:hover{color:#00b0d9;}
+#menu-abas-modulos .ativo
+{
+    background-color: #fff;
+    color:#00b0d9;
+}
+#menu-abas-modulos .ativo a {color:#00b0d9;}
+#menu-abas-modulos .ativo a:hover{color:#333;}
+.aba-modulo-ativo 
+{
+    display: inline-block;
+    padding: 0 15px;
+    height: 35px;
+    font-size: 18px;
+    line-height: 35px;
+    border-radius: 3px 3px 0px 0px;
+    background-color: #e0e0e0;
+    box-shadow: 0px -4px 7px 0px rgba(0,0,0,0.35);
+    margin-left:10px;
+}
+.bt-fechar-modulo-ativo  
+{
+    padding-left: 10px;    
+    font-weight: bold;
+    float: right;
+    font-size: 20px;  
+}
+
+/* menu utilitario */
+.menu-utilitario-topo
+{
+    margin-bottom:35px;
+    margin-top: 20px;
+}
+.menu-utilitario-topo > a.btn
+{
+    background-color: #fff; 
+    box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.25);   
+    border:none;
+    color:#999 !important;
+    text-transform:uppercase;   
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,1) 87%,rgba(239,239,239,1) 98%,rgba(255,255,255,1) 100%);
+    font-size: 18px;
+    border:#fff 1px solid;
+    margin-left:10px;
+}
+.menu-utilitario-topo > a.btn:focus, .menu-utilitario-topo > a.btn:hover, .menu-utilitario-topo > a.btn:hover:active  
+{
+    background: linear-gradient(to bottom, rgba(244,244,244,1) 0%,rgba(244,244,244,1) 87%,rgba(224,224,224,1) 98%,rgba(244,244,244,1) 100%);
+    border:#bababa 1px solid;
+    color:#333 !important;
+}
+.menu-utilitario-topo > a.btn span
+{
+    font-size: 24px;
+    margin-left: 10px;
+    text-rendering: optimizeLegibility;
+}
+.menu-utilitario-topo > a.btn > span.esquerdo
+{   
+    margin-right: 10px;
+    margin-left: 0px;
+}
+
+.menu-utilitario-topo > a.btn span.verde-medio
+{
+    color:#5fb0a0 !important;
+}
+.menu-utilitario-topo > a.btn span.verde
+{
+    color:#5cb85c !important;
+}
+
+.menu-utilitario-topo > a.btn span.vermelho
+{
+    color:#d9534f !important;
+}
+
+.menu-utilitario-topo > a.btn span.azul
+{
+    color:#5bc0de !important;
+}
+
+.menu-utilitario-topo > a.btn:hover span 
+{
+   color:#999 !important;
+}
+

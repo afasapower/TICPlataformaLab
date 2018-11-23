@@ -1,0 +1,116 @@
+﻿@model Plataforma.Ui.OrgTs.ViewModel.LayoutViewModel
+@using System.Linq
+@using Plataforma.Ui.OrgTs.ViewModel.Sistema
+@{ 
+    List<Modulo> modulos = Model.menuModulos;
+
+    List<Menu> menuAcao = Model.menuAcao;
+
+    List<Menu_Sub> menuSub = Model.menuSub;
+}
+
+<div id="menu-geral" class="col-md-12 col-lg-12">
+    <ul>
+        @foreach (var dadosModulos in modulos)
+        {
+            <li class="@(dadosModulos.cor)-claro">
+                <div class="bt-modulo">
+                    <a href="#" target="_self"><span class="@dadosModulos.classe_css"></span> @dadosModulos.nome</a>
+                </div>
+                <!-- Menu ações (Cad., Mov., Util., Rel) -->
+                <div class="col-md-12 col-lg-12 menu-acao fundo-@(dadosModulos.cor)-claro">
+                    <ul>
+                        @foreach (var botaoAcao in menuAcao)
+                        {
+                            if (botaoAcao.id_modulo == dadosModulos.id)
+                            {
+                                <li class="@(dadosModulos.cor)-medio">
+                                    <div class="bt-acoes">
+                                        <a href="#" title="@botaoAcao.descricao" target="_self"><span class="img-acoes" data-titan-bt-acao-topo-menu="@botaoAcao.nome"></span>@botaoAcao.nome</a>
+                                    </div>
+                                    <!-- Inicio menu-itens-modulo -->
+                                    <div class="col-md-12 col-lg-12 menu-itens-modulo fundo-@(dadosModulos.cor)-medio">
+                                        <ul>
+                                            @foreach (var botaoMenuSub in menuSub)
+                                            {
+                                                if (botaoMenuSub.parent == Guid.Empty && botaoMenuSub.id_menu == botaoAcao.id)
+                                                {
+                                                    <li class="@(dadosModulos.cor)-escuro">
+                                                        <div class="bt-itens-modulos">
+                                                            <a href="#" target="_self">@botaoMenuSub.nome</a>
+                                                        </div>
+                                                        <!-- Inicio menu funcoes -->
+                                                        <div class="col-md-12 col-lg-12 menu-funcoes fundo-@(dadosModulos.cor)-escuro">
+                                                            @{
+                                                                int b = 1;
+                                                                List<TopoMenuViewModel> menuBotoes = new List<TopoMenuViewModel>();
+                                                                System.Text.StringBuilder itens = new System.Text.StringBuilder();
+
+                                                                foreach (var botaoPag in menuSub)
+
+                                                                {
+                                                                    if (botaoPag.parent == botaoMenuSub.id)
+                                                                    {
+                                                                        menuBotoes.Add(new TopoMenuViewModel()
+                                                                        {
+                                                                            nome = botaoPag.nome,
+                                                                            cor = dadosModulos.cor,
+                                                                            url = botaoPag.url,
+                                                                            idPagina = (Guid)botaoPag.id_pagina
+                                                                        });
+                                                                    }
+                                                                }
+
+                                                                foreach (var itemBtMenu in menuBotoes)
+                                                                {
+                                                                    bool separador = ((b % 6 == 0 || b == menuBotoes.Count() || menuBotoes.Count() == 1) ? true : false);
+
+                                                                    itens.Append("<li class=\"");
+                                                                    itens.Append(itemBtMenu.cor);
+                                                                    itens.Append("-claro\" >");
+                                                                    itens.Append("<div class=\"bt-itens-funcoes\"><a href=\"");
+                                                                    itens.Append("/");
+                                                                    itens.Append(itemBtMenu.url);
+                                                                    itens.Append("?id_pagina=");
+                                                                    itens.Append(itemBtMenu.idPagina.ToString());
+                                                                    itens.Append("&id_menu=");
+                                                                    itens.Append(botaoMenuSub.id_menu.ToString());
+                                                                    itens.Append("\" class=\"");
+                                                                    itens.Append(dadosModulos.cor);
+                                                                    itens.Append("-escuro\" ");
+                                                                    itens.Append("data-titan-idpagina=\"");
+                                                                    itens.Append(itemBtMenu.idPagina.ToString());
+                                                                    itens.Append("\" data-titan-idmenu=\"");
+                                                                    itens.Append(botaoMenuSub.id_menu.ToString());
+                                                                    itens.Append("\" target=\"_self\" >");
+                                                                    itens.Append(itemBtMenu.nome);
+                                                                    itens.Append("</a></div></li>");
+
+                                                                    if (separador)
+                                                                    {
+                                                                        @Html.Raw("<ul class=" + dadosModulos.cor + "-medio>" + itens.ToString() + "</ul>")
+                                                                        itens = new System.Text.StringBuilder();
+                                                                    }
+                                                                    b++;
+                                                                }
+                                                            }
+                                                        </div>
+                                                        <!-- Fim menu funcoes -->
+                                                    </li>
+                                                }
+                                            }
+                                        </ul>
+                                    </div>
+                                    <!-- Fim menu-itens-modulo -->
+                                </li>
+                                }
+                            }
+                        <!-- aqui -->
+                    </ul>
+                </div>
+                <!-- Fim Menu ações -->
+            </li>
+            }
+    </ul>
+</div>
+

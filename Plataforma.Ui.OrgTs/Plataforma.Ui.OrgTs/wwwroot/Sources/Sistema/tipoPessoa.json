@@ -1,0 +1,56 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_TipoPessoa/selecionarTodos",
+    "colunas": [
+      {
+        "data": "descricao",
+        "title": "Tipo Pessoa"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_TipoPessoa/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../Sistema_TipoPessoa/PaginasMenuSelecionarTodos",
+        "colunas": [
+          {
+            "data": "descricao",
+            "title": "Tipo de Pessoa"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          },
+          {
+            "class": "never",
+            "data": "usuario",
+            "title": ""
+          },
+          {
+            "class": "never",
+            "data": "data_inclusao",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../menu/paginas-menus-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}
+
+
+
+
+
+

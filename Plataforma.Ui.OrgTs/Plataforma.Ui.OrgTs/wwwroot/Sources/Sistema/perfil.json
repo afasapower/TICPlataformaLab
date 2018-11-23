@@ -1,0 +1,37 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_Perfil/selecionarTodos",
+    "colunas": [
+      {
+        "data": "nome",
+        "title": "Nome da Cidade"
+      },
+      {
+        "data": "estados.nome",
+        "title": "Estado"
+      },
+      {
+        "data": "cod_ibge",
+        "title": "Cód. IBGE"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../cidade/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": []
+  }
+}
+
+
+
+
+
+

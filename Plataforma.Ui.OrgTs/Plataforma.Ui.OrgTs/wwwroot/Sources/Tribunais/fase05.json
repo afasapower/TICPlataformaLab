@@ -1,0 +1,28 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Tribunal_Fase05Processo/selecionarTodos",
+    "colunas": [
+      {
+        "class": "never",
+        "data": null
+      },
+      {
+        "data": "processo.nome",
+        "title": "Nome"
+      },
+      {
+        "data": "processo.numero",
+        "title": "Número do processo"
+      },
+      {
+        "class": "never",
+        "data": "id_processo",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Tribunal_Fase05Processo/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {}
+}

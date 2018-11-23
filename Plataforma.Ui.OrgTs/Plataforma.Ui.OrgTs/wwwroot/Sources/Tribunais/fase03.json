@@ -1,0 +1,52 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Tribunal_Fase03Processo/selecionarTodos",
+    "colunas": [
+      {
+        "class": "never",
+        "data": null
+      },
+      {
+        "data": "processo.nome",
+        "title": "Nome"
+      },
+      {
+        "data": "processo.numero",
+        "title": "Número do processo"
+      },
+      {
+        "class": "never",
+        "data": "id_processo",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Tribunal_Fase03Processo/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../questionario/",
+        "colunas": [
+          {
+            "data": "nome",
+            "title": "Nome"
+          },
+          {
+            "data": "situacao_Cadastral.descricao",
+            "title": "Situação"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../questionario/" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

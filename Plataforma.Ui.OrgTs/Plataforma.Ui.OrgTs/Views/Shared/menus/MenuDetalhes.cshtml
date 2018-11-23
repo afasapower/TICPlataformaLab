@@ -1,0 +1,68 @@
+﻿@using System.Reflection;
+@model Plataforma.Ui.OrgTs.ViewComponents.BtMenuDetalhes
+@{
+    // Recebe os dados da View
+    List<Plataforma.Ui.OrgTs.ViewComponents.MenuDetalhes> itensMenu = Model.ListaMenuDetalhes;
+    List<Retorno_Permissao_Grupo_Usuario> listaPermissoes = Model.listaPermissoesMenuUtilitarios ?? new List<Retorno_Permissao_Grupo_Usuario>();
+
+    // Captura os dados do ID para verificação de formulário vazio
+    bool formVazio = false;
+
+    if (itensMenu[0].Id.GetType().Name == "Guid")
+    {
+        formVazio = ((Guid)itensMenu[0].Id == Guid.Empty ? true : false);
+    }
+    else
+    {
+        formVazio = (itensMenu[0].Id.ToString() == "" ? true : false);
+    }
+}
+
+<div class="col-lg-6 col-md-6 col-sm-6 text-right menu-detalhes">
+    @foreach (var item in itensMenu)
+    {
+        string confirmacaoAcao = (item.Confirmacao != null ? "data-titan-bt-confirmacao=\""+item.Confirmacao.Titulo+";"+item.Confirmacao.Tipo+";"+item.Confirmacao.Mensagem + ";" + item.Confirmacao.TituloBotaoSim + "\"": string.Empty);
+
+        bool permisssaoBotao = false;
+
+        if (listaPermissoes.Count > 0)
+        {
+            foreach (var itensPermissoes in listaPermissoes[0].GetType().GetProperties())
+            {
+                string nome = itensPermissoes.Name;
+                if (nome == item.Tipo)
+                {
+                    permisssaoBotao = (bool)itensPermissoes.GetValue(listaPermissoes[0]);
+                }
+            }
+        }
+
+        @switch (item.Tipo)
+        {
+            case "cancelar":
+                <button type="button" class="btn btn-lg btn-icon btn-abas-interno btn-rounded margin-inline remove cancelar-bt-detalhes" data-tipo-bt="cancelar" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Cancelar" data-url="@item.Url"><i class="icmn-cross" aria-hidden="true"></i></button>
+                break;
+            case "salvar":
+                <button type="button" class="btn btn-lg btn-icon btn-abas-interno btn-rounded margin-inline remove salvar-bt-detalhes" data-tipo-bt="salvar" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Salvar" data-url="@item.Url" @Html.Raw(confirmacaoAcao) ><i class="icmn-checkmark" aria-hidden="true"></i></button>
+                    break;
+            case "incluir":
+                if (permisssaoBotao == false) { break; }
+                <button type="button" class="btn btn-lg btn-icon btn-abas-interno btn-rounded margin-inline incluir-bt-detalhes @if(item.Visivel == false){@Html.Raw("remove")}" data-tipo-bt="incluir" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Nova inclusão" data-url="@item.Url"><i class="icmn-file-plus2" aria-hidden="true"></i></button>
+                break;
+            case "deletar":
+                if (permisssaoBotao == false) { break; }
+                <button type="button" class="btn btn-lg btn-icon btn-abas-interno btn-rounded margin-inline excluir-bt-detalhes @if (formVazio  == true || item.Visivel == false){@Html.Raw("remove")}" data-tipo-bt="excluir" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Excluir" data-url="@item.Url" data-idaba="@item.Id"><i class="icmn-bin" aria-hidden="true"></i></button>
+                break;
+            case "anexar":
+                <button type="button" class="btn btn-lg btn-icon btn-abas-interno btn-rounded margin-inline @if(formVazio  == true || item.Visivel == false){@Html.Raw("remove")}" id="anexar-bt-detalhes" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Anexar arquivo" data-url=""><i class="icmn-attachment" aria-hidden="true"></i></button>
+                break;
+            case "atualizar":
+                if (permisssaoBotao == false) { break; }
+                <button type="button" class="btn btn-lg btn-icon btn-abas-interno btn-rounded margin-inline editar-bt-detalhes @if(formVazio == true || item.Visivel == false){@Html.Raw("remove")}" data-tipo-bt="editar" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Editar" data-url="@item.Url" data-idaba="@item.Id" @Html.Raw(confirmacaoAcao)><i class="icmn-pencil" aria-hidden="true"></i></button>
+                break;
+            default:
+                <p>Verifique o item "@item.Tipo" inserido no menu detalhes</p>
+                break;
+        }
+    }
+</div>

@@ -1,0 +1,59 @@
+﻿@model Plataforma.Ui.OrgTs.ViewModel.Sistema.HomeViewModel
+@using Plataforma.Ui.OrgTs.ViewModel.Components
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section estilos
+{
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">   
+}
+@section scripts
+{   
+    <script src="~/js/min/sistema/home.js"></script>   
+    <script src="~/js/min/sistema/atendimento-home.js"></script>
+}
+
+<div class="row">
+    <div class="col-md-12" id="data-hora">
+        <h3 class="text-right ma">
+            <span class="icmn-clock3"></span>@DateTime.Now.ToString("d")
+        </h3>
+        <p id="horario" class="text-right">
+
+        </p>
+    </div>
+</div>
+<section>
+    <div class="col-md-12">
+        <div class="col-md-4 col-md-offset-2">
+            <section class="panel">
+                <div class="panel-heading" style="padding-bottom: 13px;">
+                    <div class="row">
+                        <div class="col-lg-6"><h2>Agendamentos</h2></div>
+                        <div class="col-lg-6 text-right">
+                            <button type="button" class="btn btn-login" data-toggle="modal" data-target="#modalAgendamento">
+                                Novo agendamento
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="calendario"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div>
+            @await Component.InvokeAsync("AcessoRapido")
+        </div>
+    </div>
+</section>
+
+@section modal
+{
+    @await Component.InvokeAsync("ModalAgendamento")
+}

@@ -1,0 +1,101 @@
+﻿@model Plataforma.Ui.OrgTs.ViewModel.Sistema.AgendaAtendimentoViewModel
+@{
+    Layout = null;
+
+    Agenda_Atendimento dadosAgendaAtendimento = Model.agendaAtendimento ?? new Agenda_Atendimento();
+    List<Pessoa> dadosPessoa = Model.listaPessoa;
+
+    // Botões para o menu detalhes da aba  
+    BtMenuDetalhes dadosMenu = new BtMenuDetalhes()
+    {
+        listaPermissoesMenuUtilitarios = new List<Retorno_Permissao_Grupo_Usuario>(),
+        ListaMenuDetalhes = new List<MenuDetalhes>()
+        {
+        new MenuDetalhes(){Id = dadosAgendaAtendimento.id, Tipo = "salvar", Visivel = true},
+        new MenuDetalhes(){Id = dadosAgendaAtendimento.id, Tipo = "cancelar", Visivel = true, Url = "Sistema_AgendaAtendimento/AgendaAtendimento-aba"},
+        new MenuDetalhes(){Id = dadosAgendaAtendimento.id, Tipo = "incluir", Visivel = true},
+        new MenuDetalhes(){Id = dadosAgendaAtendimento.id, Tipo = "deletar", Visivel = true},
+        new MenuDetalhes(){Id = dadosAgendaAtendimento.id, Tipo = "atualizar", Visivel = true }
+        }
+    };
+
+}
+<section class="conteudo-aba">
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <h1>Agenda de Atendimento</h1>
+            </div>
+            <partial name="menus/MenuDetalhes" model='dadosMenu' />
+        </div>
+    </div>
+
+    <div class="row">
+        <div></div>
+    </div>
+
+    <div class="row">
+        <form class="col-lg-12 col-md-12 col-sm-12" action="Sistema_AgendaAtendimento/AgendaAtendimento-aba">
+            @Html.AntiForgeryToken()
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="id_tipo_agendamento">Tipo de Agendamento</label><br />
+                        <select class="select-titan" name="id_tipo_agendamento" tabindex="1" data-width="50%" data-live-search="true" id="id_tipo_agendamento" disabled>
+                            <option value="">Selecione um tipo de agendamento</option>                            
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="nome_solicitante">Nome do Solicitante</label>
+                        <input type="text" class="form-control" name="nome_solicitante" tabindex="2" readonly placeholder="Informe o Nome do Solicitante" id="nome_solicitante" value="@dadosAgendaAtendimento.nome_solicitante">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="data">Data</label>
+                        <input type="text" class="form-control width-200 titan-date-picker" name="data" tabindex="3" readonly placeholder="Insira uma Data" id="data" value="@dadosAgendaAtendimento.data">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="hora">Hora</label>
+                        <input type="text" class="form-control titan-hour-picker width-150" name="hora" tabindex="4" readonly placeholder="Insira uma Hora" id="hora" value="@dadosAgendaAtendimento.hora">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="id_pessoa_responsavel">Nome do Responsável</label><br />
+                        <select class="select-titan" name="id_pessoa_responsavel" tabindex="5" data-live-search="true" id="id_pessoa_responsavel" disabled>
+                            <option value="">Selecione um nome</option>
+                            @foreach (var itens in dadosPessoa)
+                             {
+                                if (itens.id == dadosAgendaAtendimento.id_pessoa_responsavel)
+                                {
+                                    <option value="@itens.id" selected>@itens.razao_social_nome</option>
+                                }
+                                else
+                                {
+                                    <option value="@itens.id">@itens.razao_social_nome</option>
+                                }
+                             }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="observacao">Observação</label>
+                        <textarea class="form-control height-300" name="observacao" tabindex="6" readonly placeholder="Insira uma observação (opcional)" id="observacao">@dadosAgendaAtendimento.observacao</textarea>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

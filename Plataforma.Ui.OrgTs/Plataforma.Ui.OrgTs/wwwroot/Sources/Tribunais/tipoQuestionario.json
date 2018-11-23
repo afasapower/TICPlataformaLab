@@ -1,0 +1,64 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Tribunal_TipoQuestionario/selecionarTodos",
+    "colunas": [
+      {
+        "data": "descricao",
+        "title": "Descrição"
+      },
+      {
+        "class": "never",
+        "data": "data_inclusao",
+        "title": ""
+      },
+      {
+        "class": "never",
+        "data": "usuario",
+        "title": ""
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Tribunal_TipoQuestionario/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../menu/PaginasMenuSelecionarTodos",
+        "colunas": [
+          {
+            "data": "descricao",
+            "title": "Descrição"
+          },
+          {
+           "data": "id_pessoa_empresa",
+           "title": "Pessoa"
+          },
+         {
+            "class": "never",
+            "data": "data_inclusao",
+            "title": ""
+          },
+          {
+            "class": "never",
+            "data": "usuario",
+            "title": ""
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../menu/paginas-menus-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

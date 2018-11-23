@@ -1,0 +1,48 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../grupousuario/selecionarTodos",
+    "colunas": [
+      {
+        "data": "nome",
+        "title": "nome"
+      },     
+      {
+        "data": "situacao_Cadastral.descricao",
+        "title": "Situação"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../grupousuario/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../menu/PaginasMenuSelecionarTodos",
+        "colunas": [
+          {
+            "data": "nome",
+            "title": "Nome"
+          },
+          {
+            "data": "situacao_Cadastral.descricao",
+            "title": "Situação"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../menu/paginas-menus-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

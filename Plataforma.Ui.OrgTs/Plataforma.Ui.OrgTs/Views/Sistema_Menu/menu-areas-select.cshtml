@@ -1,0 +1,127 @@
+﻿@model Plataforma.Ui.OrgTs.ViewModel.Sistema.MenuViewModel
+@{
+    Layout = null;
+    Menu_Sub dados = Model.menuSub ?? new Menu_Sub();
+    List<Menu_Sub> dadosLista = Model.menuSubLista;
+    List<Pagina> dadosPagina = Model.paginaLista;
+    List<Situacao_Cadastral> dadosSituacao = Model.listaSituacao;
+}
+ <!-- Select situação -->
+<div class="form-group col-md-12">
+    <label for="id_situacao_cadastral">Situação cadastral</label><br />
+    <select class="select-titan" name="id_situacao_cadastral" id="id_situacao_cadastral" tabindex="1" data-live-search="true" disabled>
+        @foreach (var itens in dadosSituacao)
+        {
+            if (itens.id == dados.id_situacao_cadastral)
+            {
+                <option value="@itens.id" selected>@itens.descricao</option>
+            }
+            else
+            {
+                <option value="@itens.id">@itens.descricao</option>
+            }
+        }
+    </select>
+</div>
+
+<div class="form-group col-md-8">
+    <label for="nome">Nome</label>
+    <input type="text" class="form-control" name="nome" readonly placeholder="Insira seu nome" id="nome" tabindex="2" value="@dados.nome">
+</div>
+
+<div class="form-group col-md-8">
+    <label for="descricao">Descrição</label>
+    <input type="text" class="form-control" name="descricao" readonly placeholder="Insira uma descrição" id="descricao" tabindex="3" value="@dados.descricao">
+</div>
+
+<div class="form-group col-md-2">
+    <label for="ordem">Ordem</label>
+    <input type="number" step="1" class="form-control" name="ordem" readonly id="ordem" tabindex="4" value="@dados.ordem">
+</div>
+
+<div class="form-group col-md-12"><br /><h2>Menu pai</h2></div>
+   
+<div class="form-group col-md-12">
+    <label for="parent">Menu pai</label><br />
+    <select class="select-titan" name="parent" id="parent" data-live-search="true" tabindex="5" disabled>
+        <option value="">Selecione um item</option>
+        @foreach (var itensMenu in dadosLista)
+        {
+            if (itensMenu.id == dados.parent)
+            {
+                <option value="@itensMenu.id" selected>@itensMenu.nome</option>
+
+            }
+            else
+            {
+                <option value="@itensMenu.id">@itensMenu.nome</option>
+            }
+
+        }
+    </select>
+</div>
+
+<div class="form-group col-md-12">
+    <label for="tipo_pagina">Tipo de página</label><br />
+    @{ 
+        List<string> nomeTipo = new List<string>() { "Não quero", "Aba", "Menu" };
+        List<string> valorTipo = new List<string>() { "", "A", "M" };
+        var i = 0;
+    }
+    <select class="select-titan" name="tipo_pagina" id="tipo_pagina" data-live-search="true" tabindex="6" disabled>
+        @foreach (var itensMenuTipo in valorTipo)
+        {
+            if (itensMenuTipo == dados.tipo_pagina)
+            {
+                <option value="@itensMenuTipo" selected>@nomeTipo[i]</option>
+            }
+            else
+            {
+                <option value="@itensMenuTipo">@nomeTipo[i]</option>
+            }
+            i++;
+        }              
+    </select>
+</div>
+
+
+<div class="form-group col-md-12">
+    <label for="id_pagina">Página</label><br />
+    <select class="select-titan" name="id_pagina" id="id_pagina" tabindex="7" data-live-search="true" disabled>
+        <option value="">Selecione uma página</option>
+        @foreach (var itensPag in dadosPagina)
+        {
+            if (itensPag.id == dados.id_pagina)
+            {
+                <option value="@itensPag.id" selected>@itensPag.nome</option>
+            }
+            else
+            {
+                <option value="@itensPag.id">@itensPag.nome</option>
+            }
+        }
+    </select>
+</div>
+
+<div class="form-group col-md-12">
+    <label for="numero_grid">Número da Grid Json</label><br />
+    <select class="select-titan" name="numero_grid" id="numero_grid" tabindex="8" disabled>
+        <option value="-1">Aba sem grid</option>
+        @for (int g = 0; g < 100; g++)
+        {
+            if (g == dados.numero_grid)
+            {
+                <option value="@g" selected>@g</option>
+            }
+            else
+            {
+                <option value="@g">@g</option>
+            }
+        }
+    </select>
+</div>
+
+ <div class="form-group col-md-8">
+    <label for="url">Endereço da página</label>
+    <input type="url" class="form-control" name="url" readonly placeholder="Insira o endereço da página" id="url" tabindex="9" value="@dados.url">
+</div>

@@ -1,0 +1,70 @@
+﻿@model Plataforma.Ui.OrgTs.ViewModel.Sistema.UsuarioViewModel
+@{
+    Layout = null;
+
+    Usuario dadosusuario = Model.usuario ?? new Usuario();
+    Pessoa dadospessoa = Model.pessoa ?? new Pessoa();
+
+    // Botões para o menu detalhes da aba solicitada   
+    List<MenuDetalhes> dadosMenu = new List<MenuDetalhes>()
+    {
+        new MenuDetalhes(){Id = dadosusuario.id, Tipo = "salvar", Visivel = true},
+        new MenuDetalhes(){Id = dadosusuario.id, Tipo = "cancelar", Visivel = true, Url = "Sistema_Usuario/usuario-aba"},
+        new MenuDetalhes(){Id = dadosusuario.id, Tipo = "incluir", Visivel = true},
+        new MenuDetalhes(){Id = dadosusuario.id, Tipo = "deletar", Visivel = true},
+        new MenuDetalhes(){Id = dadosusuario.id, Tipo = "atualizar", Visivel = true}
+    };
+}
+<section class="conteudo-aba">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <h1>Inclusão Usuario</h1>
+            </div>
+            <partial name="menus/MenuDetalhes" model='dadosMenu' />
+        </div>
+    </div>
+
+    <div class="row">
+        <div></div>
+    </div>
+
+    <div class="row">
+        <form class="col-lg-12 col-md-12 col-sm-12" action="Sistema_Usuario/alteracao-senha">
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="col-md-8">                
+                    <div class="form-group col-md-12">
+                        <label for="razao_social_nome">Nome</label>
+                        <input type="text" class="form-control" name="razao_social_nome" tabindex="1" readonly placeholder="Insira seu nome" id="razao_social_nome" value="@dadospessoa.razao_social_nome">
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="login">Login</label>
+                        <input type="text" class="form-control" name="login" tabindex="2" readonly placeholder="Insira seu login" id="login" value="@dadosusuario.login">
+                    </div>
+
+                    <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                        <label for="senha">Senha</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control" name="senha" tabindex="4" readonly placeholder="Insira sua senha com no máximo 8 caracteres" id="senha" value="@dadosusuario.senha">
+                            <span class="input-group-addon">
+                                <i class="icmn-key"></i>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                        <label for="confirmar_senha">Confirmar senha</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control" name="confirmar_senha" tabindex="5" readonly id="confirmar_senha" value="@dadosusuario.senha">
+                            <span class="input-group-addon">
+                                <i class="icmn-key"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

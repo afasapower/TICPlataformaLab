@@ -1,0 +1,29 @@
+﻿@using System;
+@using System.Reflection;
+@{
+    Layout = null;
+    Permissao_Grupo dadosPermissoes = Model;
+}
+
+@foreach (var item in dadosPermissoes.GetType().GetProperties())
+{
+    if (item.PropertyType.Name == "Boolean")
+    {
+        if (item.Name != "excluido")
+        {
+            bool permissao = (bool)item.GetValue(dadosPermissoes);
+            <div class="row">
+                <div class="col-md-12 margin-bottom-10">
+                    <p class="margin-bottom-0"><strong>@item.Name</strong></p>
+
+                    <label class="radio-inline">
+                        <input type="radio" name="@item.Name" value="true" @if(permissao){@Html.Raw("checked")}> Sim
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="@item.Name" value="false" @if (!permissao) {@Html.Raw("checked")}> Não
+                    </label>
+                </div>
+            </div>
+        }
+    }
+}   

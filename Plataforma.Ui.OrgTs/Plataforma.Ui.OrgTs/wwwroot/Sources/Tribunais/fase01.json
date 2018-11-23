@@ -1,0 +1,68 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Tribunal_Fase01Processo/selecionarTodos",
+    "colunas": [
+      {
+        "class": "never",
+        "data": null
+      },
+      {
+        "data": "processo.nome",
+        "title": "Nome"
+      },
+      {
+        "data": "processo.numero",
+        "title": "Número do processo"
+      },
+      {
+        "class": "never",
+        "data": "id_processo",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Tribunal_Fase01Processo/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../Tribunal_Fase01Processo/QuestionarioSelecionarTodos",
+        "colunas": [
+          {
+            "data": "titulo",
+            "title": "Nome do arquivo"
+          },
+          {
+            "data": "tipo_Arquivo.descricao",
+            "title": "Tipo de documento"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Tribunal_Fase01Processo/questionario-aba" ],
+        "botoes": [ "excel" ]
+      },
+      {
+        "url": "../Testemunha/selecionarTestemunhasTodos",
+        "colunas": [
+          {
+            "data": "pessoa_Testemunha.razao_social_nome",
+            "title": "Nome"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Tribunal_Fase01Processo/testemunha-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

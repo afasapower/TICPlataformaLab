@@ -1,0 +1,49 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Situacao_Cadastral/selecionarTodos",
+    "colunas": [
+      {
+        "data": "descricao",
+        "title": "Descrição"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Situacao_Cadastral/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../menu/PaginasMenuSelecionarTodos",
+        "colunas": [
+          {
+            "data": "data_inclusao",
+            "title": "Data de Inclusão"
+          },
+          {
+            "data": "descricao",
+            "title": "Descrição"
+          },
+          {
+            "class": "never",
+            "data": "usuario",
+            "title": ""
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../menu/paginas-menus-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

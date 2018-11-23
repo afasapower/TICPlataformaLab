@@ -1,0 +1,31 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_TipoDocumento/selecionarTodos",
+    "colunas": [
+      {
+        "data": "nome",
+        "title": "Nome"
+      },
+      {
+        "data": "status",
+        "title": "Status"
+      },
+      {
+        "data": "data_inclusao",
+        "title": "Data Inclusão"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_TipoDocumento/interno" ],
+    "botoes": []
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": []
+  }
+}

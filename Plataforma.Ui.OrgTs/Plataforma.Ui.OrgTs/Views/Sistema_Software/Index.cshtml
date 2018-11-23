@@ -1,0 +1,33 @@
+﻿@model List<Retorno_Permissao_Grupo_Usuario>
+@{
+    ViewData["Title"] = "Software";
+}
+@section scripts
+{
+    <script src="~/js/Sistema/software.js"></script>    
+}
+<partial name="menus/MenuAbasAtivos" />
+<section class="page-content">
+    <section class="page-content-inner">
+
+        <partial name="buscas/topoPesquisas" />
+
+        <partial name="menus/MenuUtilitarios" model='new MenuUtilitariosViewModel() { listaPermissoesMenuUtilitarios = Model, menuUtilitario = new string[,] { { "incluir", "Sistema_Software/interno" } } }' />
+
+    </section>
+
+    <section class="page-content-inner">
+        <section class="panel">
+            <div class="panel-heading">
+                <h1>@ViewData["Title"]</h1>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table id="lista" class="table table-hover nowrap" cellspacing="0" style="width:100%;"></table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</section>

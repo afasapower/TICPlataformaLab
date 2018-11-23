@@ -1,0 +1,44 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_PermissaoUsuarioEmpresa/selecionarTodos",
+    "colunas": [
+      {
+        "data": "pessoa.nome_fantasia_apelido",
+        "title": "Nome"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_PermissaoUsuarioEmpresa/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../Sistema_PermissaoUsuarioEmpresa/selecionarUsuariosTodos",
+        "colunas": [
+          {
+            "data": "pessoa_Empresa.nome_fantasia_apelido",
+            "title": "Nome"
+          },
+          {
+            "data": "pessoa_Empresa.cnpj_cpf",
+            "title": "CNPJ"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Sistema_PermissaoUsuarioEmpresa/PermissaoUsuarioEmpresa-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

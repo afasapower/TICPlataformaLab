@@ -1,0 +1,48 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Tribunal_MovimentacaoDocumentos/selecionarTodos",
+    "colunas": [
+      {
+        "class": "never",
+        "data": null
+      },
+      {
+        "data": "nome",
+        "title": "Nome"
+      },
+      {
+        "data": "numero",
+        "title": "Número do processo"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Tribunal_MovimentacaoDocumentos/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../Tribunal_MovimentacaoDocumentos/selecionarDocumentosTodos",
+        "colunas": [
+          {
+            "data": "nome",
+            "title": "Nome"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Tribunal_MovimentacaoDocumentos/MovimentaDocumento-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+﻿@model Plataforma.Ui.OrgTs.ViewModel.Components.ComboEmpresaViewModel
+@{
+    // Dados do usuario do banco
+
+    var dados = Model.listaDadosUsuarioEmpresa;
+    Guid idUsuario = Model.id_usuario_logado;
+    Guid idEmpresa = Model.id_pessoa_empresa;
+}
+
+@if (Model.visivelCombo)
+{
+    if (!Model.gridInicial)
+    {
+        <div class="form-group col-md-12">
+            <label for="id_pessoa_empresa">Empresa</label><br />
+            <select class="select-titan" name="id_pessoa_empresa" id="id_pessoa_empresa"  data-live-search="true" style="display:none" disabled>
+                <option value="">Selecione uma empresa</option>
+                @foreach (var itens in dados)
+                {
+                    if (itens.id_pessoa_empresa == idEmpresa)
+                    {
+                        <option value="@itens.id_pessoa_empresa" selected>@itens.razao_social_nome</option>
+                    }
+                    else
+                    {
+                        <option value="@itens.id_pessoa_empresa">@itens.razao_social_nome</option>
+                    }
+                }
+            </select>
+        </div>
+    }
+    else
+    {
+        <select class="select-titan comboAlterDadosGridInicial" name="id_pessoa_empresa" style="display:none" data-live-search="true">
+            <option value="">Selecione uma empresa</option>
+            @foreach (var itens in dados)
+            {
+                if (itens.id_pessoa_empresa == idEmpresa)
+                {
+                    <option value="@itens.id_pessoa_empresa" selected>@itens.razao_social_nome</option>
+                }
+                else
+                {
+                    <option value="@itens.id_pessoa_empresa">@itens.razao_social_nome</option>
+                }
+            }
+        </select>
+    }
+}

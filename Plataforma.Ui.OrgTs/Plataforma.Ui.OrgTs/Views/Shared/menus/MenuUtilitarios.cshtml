@@ -1,0 +1,74 @@
+﻿@using System.Reflection;
+@model MenuUtilitariosViewModel
+@{ 
+    string[,] arrayMenu = Model.menuUtilitario;
+    List<Retorno_Permissao_Grupo_Usuario> listaPermissoes = Model.listaPermissoesMenuUtilitarios;
+}
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 menu-utilitario-topo">
+        @if (arrayMenu.Length > 0)
+        {
+            string tipoId = "Guid";
+            for (int m = 0; m < arrayMenu.GetLength(0); m++)
+            {
+                if (arrayMenu.GetLength(1) == 3)
+                {
+                    tipoId = arrayMenu[m, 2];
+                }
+
+
+                bool permisssaoBotao = false;
+                if (listaPermissoes.Count > 0)
+                {
+                   foreach (var item in listaPermissoes[0].GetType().GetProperties())
+                    {
+                        string nome = item.Name;
+                        if(nome == arrayMenu[m, 0])
+                        {
+                            permisssaoBotao = (bool)item.GetValue(listaPermissoes[0]);
+                        }
+                    }
+                }
+
+
+                    @switch (arrayMenu[m, 0])
+                    {
+                        case "incluir":
+                            if (permisssaoBotao)
+                            {
+                                <a href="@arrayMenu[m, 1]" class="btn btn-default menu-utilitario-titan" data-titan-tipo-id="@tipoId" role="button" target="_self">Nova inclusão<span class="icmn-file-plus2 verde-medio"></span></a>
+                            }
+                            break;
+                        case "excluir":
+                            if (permisssaoBotao)
+                            {
+                                <a href="@arrayMenu[m, 1]" class="btn btn-default menu-utilitario-titan" data-titan-tipo-id="@tipoId" role="button" target="_self">Excluir<span class="icmn-bin vermelho"></span></a>
+                            }
+                            break;
+                        case "salvar":
+                            if (permisssaoBotao)
+                            {
+                                <a href="@arrayMenu[m, 1]" class="btn btn-default menu-utilitario-titan" data-titan-tipo-id="@tipoId" role="button" onclick="swal('Cadastro efetuado!', '', 'success');" target="_self">Salvar<span class="icmn-checkmark verde"></span></a>
+                            }
+                            break;
+                        case "anexar":
+                            if (permisssaoBotao)
+                            {
+                                <a href="@arrayMenu[m, 1]" class="btn btn-default menu-utilitario-titan" data-titan-tipo-id="@tipoId" role="button" target="_self">Anexar<span class="icmn-attachment azul"></span></a>
+                            }
+                            break;
+                        case "voltar":                            
+                                <a href="@arrayMenu[m, 1]" class="btn btn-default menu-utilitario-titan" data-titan-tipo-id="@tipoId" role="button" target="_self"><span class="icmn-circle-left4 azul esquerdo"></span> Voltar a página anterior</a>
+                            
+                            break;
+
+                        default:
+                            <p>Verifique o item "@m" inserido no menu utilitários</p>                    
+                            break;
+                    }
+                
+            }
+        }
+        @*<a href="#" class="btn btn-default" role="button">Cancelar<span class="icmn-cross vermelho"></span></a>*@
+    </div>
+</div>

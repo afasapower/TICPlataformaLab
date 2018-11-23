@@ -1,0 +1,40 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_EtapaProcesso/selecionarTodos",
+    "colunas": [
+      {
+        "data": "etapa",
+        "title": "Etapa"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_EtapaProcesso/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../Sistema_EtapaProcesso/selecionarDocumentosTodos",
+        "colunas": [
+          {
+            "data": "documento_Sistema.nome",
+            "title": "Nome"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Sistema_EtapaProcesso/etapas-documentos-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

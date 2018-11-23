@@ -1,0 +1,20 @@
+﻿div.dataTables_wrapper div.dataTables_paginate 
+{
+    margin-top: 20px;
+}
+div.dataTables_wrapper div.dataTables_info 
+{
+  padding-top: 1.85em;
+  float:left;
+}
+
+/* Botoes */
+div.dt-buttons 
+{   
+    margin-bottom: 20px;
+}
+
+div.dataTables_wrapper table tbody tr.odd
+{
+    background-color:#f9f9f9;
+}

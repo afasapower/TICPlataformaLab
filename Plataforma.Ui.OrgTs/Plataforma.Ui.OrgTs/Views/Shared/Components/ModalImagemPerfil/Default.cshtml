@@ -1,0 +1,42 @@
+﻿@model Pessoa
+@{
+    Pessoa dadosPessoa = Model ?? new Pessoa();
+    //Processo_Etapa_Arquivo dadosDocumento = Model.processoEtapaArquivo;
+
+}
+
+<div class="modal fade" id="modalImagemPerfil">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h3 class="modal-title">Imagem de perfil</h3>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <form class="col-lg-12 col-md-12 col-sm-12" action="perfil/imagem">
+                        @Html.AntiForgeryToken()
+                        <div class="row">
+                            <div class="col-md-12">  
+                                <div class="form-group col-md-12">
+
+                                    <label for="imagemperfil">Imagem</label>
+                                    <input type="file" id="imagemperfil" disabled accept=".png, .jpeg, .jpg" class="upload-titan filestyle" name="imagemperfil" data-placeholder="Selecione uma imagem" value="@Model.caminho_logotipo/@Model.logotipo" />
+          
+                                </div>                             
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" id="salva-imagem-modal">Salvar imagem</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/sistema/perfil/modalImagem.js"></script>

@@ -1,0 +1,58 @@
+﻿@model Plataforma.Ui.OrgTs.ViewModel.Sistema.LaboratorioViewModel
+@{
+    Layout = null;
+
+    Laboratorio dados = Model.laboratorio ?? new Laboratorio();
+
+    // Botões para o menu detalhes da aba solicitada
+
+    BtMenuDetalhes dadosMenu = new BtMenuDetalhes()
+    {
+        listaPermissoesMenuUtilitarios = Model.listaPermissoesMenus,
+        ListaMenuDetalhes = new List<MenuDetalhes>()
+        {
+        new MenuDetalhes(){Id = dados.id_laboratorio, Tipo = "salvar", Visivel = true},
+        new MenuDetalhes(){Id = dados.id_laboratorio, Tipo = "cancelar", Visivel = true, Url = "Sistema_Laboratorio/laboratorio-aba"},
+        new MenuDetalhes(){Id = dados.id_laboratorio, Tipo = "incluir", Visivel = true},
+        new MenuDetalhes(){Id = dados.id_laboratorio, Tipo = "deletar", Visivel = true},
+        new MenuDetalhes(){Id = dados.id_laboratorio, Tipo = "atualizar", Visivel = true }
+        }
+    };
+
+}
+<section class="conteudo-aba">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <h1>Laboratorio</h1>
+            </div>
+            <partial name="menus/MenuDetalhes" model='dadosMenu' />
+        </div>
+    </div>
+
+    <div class="col-lg-4 col-md-4 col-sm-4">
+        <h6>* Campos Obrigatórios</h6>
+    </div>
+
+    <div class="row">
+        <form class="col-lg-12 col-md-12 col-sm-12" action="Sistema_Laboratorio/laboratorio-aba">
+            @Html.AntiForgeryToken()
+            <div class="col-md-8">                
+
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label for="nome">Nome laboratorio*</label>
+                        <input type="text" class="form-control" name="nome" tabindex="3" readonly placeholder="Informe o Nome do laboratorio" id="nome" value="@dados.nome">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-3">
+                        <label for="unidade">Unidade*</label>
+                        <input type="number" class="form-control" name="unidade" tabindex="4" readonly placeholder="Unidade" id="unidade" value="@dados.unidade">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

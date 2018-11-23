@@ -1,0 +1,27 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_FormaRecebimento/selecionarTodos",
+    "colunas": [
+      {
+        "data": "descricao",
+        "title": "Nome"
+      },
+      {
+        "data": "data_inclusao",
+        "title": "Data de inclusão"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_FormaRecebimento/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": []
+  }
+}

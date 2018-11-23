@@ -1,0 +1,89 @@
+﻿@model Plataforma.Ui.OrgTs.ViewModel.Sistema.MenuViewModel
+@{ 
+    Layout = null;
+    //// Dados do usuario do banco
+    Menu dados = Model.menu;
+
+    //// Botões para o menu detalhes da aba solicitada   
+    BtMenuDetalhes dadosMenu = new BtMenuDetalhes()
+    {
+        listaPermissoesMenuUtilitarios = Model.listaPermissoesMenus,
+        ListaMenuDetalhes = new List<MenuDetalhes>()
+        {
+            new MenuDetalhes(){Id = dados.id, Tipo = "salvar", Visivel = true},
+            new MenuDetalhes(){Id = dados.id, Tipo = "cancelar", Visivel = true, Url = "Sistema_Menu/menu-acoes-aba"},
+            new MenuDetalhes(){Id = dados.id, Tipo = "incluir", Visivel = true},
+            new MenuDetalhes(){Id = dados.id, Tipo = "deletar", Visivel = true},
+            new MenuDetalhes(){Id = dados.id, Tipo = "atualizar", Visivel = true}
+        }
+    };
+}
+
+<section class="conteudo-aba">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <h1>Menu ações</h1>
+            </div>
+            <partial name="menus/MenuDetalhes" model='dadosMenu' />
+        </div>
+    </div>
+    <div class="row">
+        <div></div>
+    </div>
+
+    <div class="row">
+        <form class="col-lg-12 col-md-12 col-sm-12" action="Sistema_Menu/menu-acoes-aba">
+            @Html.AntiForgeryToken()
+            <div class="col-md-8">
+                <div class="row">
+                    <!-- Select situação -->
+                    <div class="form-group col-md-12">
+                        <label for="situacao_cadastral">Situação cadastral</label><br />
+                        <select class="select-titan" name="situacao_cadastral" tabindex="1" id="situacao_cadastral" disabled>
+                            @foreach (var itens in Model.situacao)
+                             {
+                                if (itens.id == dados.id_situacao_cadastral)
+                                {
+                                    <option value="@itens.id" selected>@itens.descricao</option>
+                                }
+                                else
+                                {
+                                    <option value="@itens.id">@itens.descricao</option>
+                                }
+                             }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-7">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" name="nome" tabindex="2" readonly placeholder="Insira seu nome" id="nome" value="@dados.nome">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-7">
+                        <label for="descricao">Descrição</label>
+                        <input type="text" class="form-control" name="descricao" tabindex="3" readonly placeholder="Insira uma descrição" id="descricao" value="@dados.descricao">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-8">
+                        <label for="nome_imagem">Arquivos</label><br />
+                        <input type="file" id="nome_imagem" accept=".png, .jpeg, .jpg" multiple class="upload-titan" name="nome_imagem" tabindex="4" value="@dados.nome_imagem" data-placeholder="@dados.nome_imagem" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-2">
+                        <label for="ordem">Ordem</label>
+                        <input type="number" step="1" class="form-control" name="ordem" tabindex="5" readonly id="ordem" value="@dados.ordem">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

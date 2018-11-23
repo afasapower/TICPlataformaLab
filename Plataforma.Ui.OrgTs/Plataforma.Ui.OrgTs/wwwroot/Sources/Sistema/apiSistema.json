@@ -1,0 +1,20 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_ApiSistema/selecionarTodos",
+    "colunas": [
+      {
+        "data": "nome",
+        "title": "Descrição"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_ApiSistema/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {}
+}

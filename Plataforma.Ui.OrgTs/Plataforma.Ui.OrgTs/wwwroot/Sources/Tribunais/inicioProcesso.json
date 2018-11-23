@@ -1,0 +1,56 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Tribunal_InicioProcesso/selecionarTodos",
+    "colunas": [
+      {
+        "class": "never",
+        "data": null
+      },
+      {
+        "data": "nome",
+        "title": "Nome"
+      },
+      {
+        "data": "numero",
+        "title": "Número do processo"
+      },
+      {
+        "data": "data_inclusao",
+        "title": "Data de cadastro"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Tribunal_InicioProcesso/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../Tribunal_InicioProcesso/ArquivosInicioProcessoSelecionarTodos",
+        "colunas": [
+          {
+            "data": "titulo",
+            "title": "Nome do arquivo"
+          },
+          {
+            "data": "tipo_Arquivo.descricao",
+            "title": "Tipo de documento"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Tribunal_InicioProcesso/arquivos-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Tribunal_DownloadProcesso/selecionarTodos",
+    "colunas": [
+      {
+        "data": "nome",
+        "title": "Nome"
+      },
+      {
+        "data": "numero",
+        "title": "Número do processo"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Tribunal_DownloadProcesso/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {}
+}

@@ -1,0 +1,56 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Tribunal_Membro/selecionarTodos",
+    "colunas": [
+      {
+        "data": "id_pessoa_empresa",
+        "title": "Pessoa"
+      },
+      {
+        "data": "id_funcao",
+        "title": "Função"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Tribunal_Membro/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../menu/PaginasMenuSelecionarTodos",
+        "colunas": [
+          {
+            "data": "id_pessoa_empresa",
+            "title": "Pessoa"
+          },
+          {
+            "data": "id_funcao",
+            "title": "Função"
+          },
+          {
+            "data": "data_inicio",
+            "title": "Inicio"
+          },
+          {
+            "data": "data_termino",
+            "title": "Termino"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../menu/paginas-menus-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

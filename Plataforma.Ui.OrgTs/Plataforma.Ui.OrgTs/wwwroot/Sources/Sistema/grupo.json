@@ -1,0 +1,65 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_Grupo/selecionarTodos",
+    "colunas": [
+      {
+        "data": "nome",
+        "title": "Nome"
+      },
+      {
+        "data": "situacao_Cadastral.descricao",
+        "title": "Situação"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_Grupo/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../Sistema_Grupo/PermissaoGruposelecionarTodos",
+        "colunas": [
+          {
+            "data": "nome_modulo",
+            "title": "Modulo"
+          },
+          {
+            "data": "nome_menu",
+            "title": "Menu"
+          },
+          {
+            "class": "never",
+            "data": "id_menu",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Sistema_Grupo/grupo-permissao-aba" ],
+        "botoes": [ "excel" ]
+      },
+      {
+        "url": "../Sistema_Grupo/PermissaoGrupoEtapaselecionarTodos",
+        "colunas": [
+          {
+            "data": "etapa_Processo.etapa",
+            "title": "Etapa"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Sistema_Grupo/permissao-grupo-etapa-aba" ],
+        "botoes": [ "excel" ]
+      }
+
+    ]
+  }
+}

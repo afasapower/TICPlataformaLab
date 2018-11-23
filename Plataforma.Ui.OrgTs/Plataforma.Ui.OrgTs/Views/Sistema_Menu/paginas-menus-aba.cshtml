@@ -1,0 +1,70 @@
+﻿@model Plataforma.Ui.OrgTs.ViewModel.Sistema.MenuViewModel
+@{
+    Layout = null;
+    // Dados do usuario do banco
+    List<Pagina> dados = Model.pagina.ToList();
+    Menu_Sub dadosMe = Model.menuSub ?? new Menu_Sub();
+    //List<Menu_Sub> dadosLista = Model.menuSubLista;
+    Guid idPagina = (dados.Count == 0 ? Guid.Empty : dados[0].id);
+    // Botões para o menu detalhes da aba solicitada    
+    BtMenuDetalhes dadosMenu = new BtMenuDetalhes()
+    {
+        listaPermissoesMenuUtilitarios = Model.listaPermissoesMenus,
+        ListaMenuDetalhes = new List<MenuDetalhes>()
+        {
+            new MenuDetalhes(){Id = idPagina, Tipo = "salvar", Visivel = true},
+            new MenuDetalhes(){Id = idPagina, Tipo = "cancelar", Visivel = true, Url = "Sistema_Menu/paginas-menus-aba"},
+            new MenuDetalhes(){Id = idPagina, Tipo = "incluir", Visivel = true},
+            new MenuDetalhes(){Id = idPagina, Tipo = "deletar", Visivel = true},
+            new MenuDetalhes(){Id = idPagina, Tipo = "atualizar", Visivel = true}
+        }
+    };
+}
+
+<section class="conteudo-aba">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <h1>Páginas menus</h1>
+            </div>
+            <partial name="menus/MenuDetalhes" model='dadosMenu' />
+        </div>
+    </div>
+    <div class="row">
+        <div></div>
+    </div>
+
+    <div class="row">
+        <form class="col-lg-12 col-md-12 col-sm-12" action="Sistema_Menu/paginas-menus-aba">
+
+            <div class="row">
+                @Html.AntiForgeryToken()
+                <div class="col-md-8">
+                    <!-- Select situação -->
+                    <div class="form-group col-md-12">
+                        <label for="situacao_cadastral">Situação cadastral</label><br />
+                        <select class="select-titan" name="situacao_cadastral" tabindex="1" id="situacao_cadastral" disabled>
+                            <option value="">Selecione uma situação</option>
+
+                                @foreach (var itens in Model.situacao)
+                                {
+                                    if (itens.id == (dados.Count > 0 ? dados[0].Situacao_Cadastral.id : 0))
+                                    {
+                                        <option value="@itens.id" selected>@itens.descricao</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@itens.id">@itens.descricao</option>
+                                    }
+                                }                                                        
+                        </select>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control" name="nome" tabindex="2" readonly placeholder="Insira seu nome" id="nome" value="@if(dados.Count > 0) { @dados[0].nome}">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

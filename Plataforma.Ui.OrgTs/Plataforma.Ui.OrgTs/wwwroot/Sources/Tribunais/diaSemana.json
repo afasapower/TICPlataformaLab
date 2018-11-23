@@ -1,0 +1,84 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Tribunal_DiaSemana/selecionarTodos",
+    "colunas": [
+      {
+        "data": "nome",
+        "title": "Dia"
+      },
+      {
+        "data": "horario_inicio_atendimento",
+        "title": "Inicio Atendimento"
+      },
+      {
+        "data": "horario_termino_atendimento",
+        "title": "Termino Atendimento"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Tribunal_DiaSemana/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../menu/PaginasMenuSelecionarTodos",
+        "colunas": [
+          {
+            "data": "data_inclusao",
+            "title": "Data de Inclusão"
+          },
+          {
+            "data": "nome",
+            "title": "Dia"
+          },
+          {
+            "data": "horario_inicio_atendimento",
+            "title": "Inicio Atendimento"
+          },
+          {
+            "data": "horario_termino_atendimento",
+            "title": "Termino Atendimento"
+          },
+          {
+            "data": "horario_termino_atendimento",
+            "title": "Termino Atendimento"
+          },
+          {
+            "class": "never",
+            "data": "data_inclusao",
+            "title": ""
+          },
+          {
+            "class": "never",
+            "data": "id_tribunal",
+            "title": ""
+          },
+          {
+            "class": "never",
+            "data": "id_pessoa_empresa",
+            "title": ""
+          },
+          {
+            "class": "never",
+            "data": "usuario",
+            "title": ""
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../menu/paginas-menus-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

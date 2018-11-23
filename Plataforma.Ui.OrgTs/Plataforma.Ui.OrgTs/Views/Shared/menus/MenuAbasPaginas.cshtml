@@ -1,0 +1,37 @@
+﻿@model string[,]
+@*@model List<Menu_Sub>*@
+@*@{ 
+    List<Menu_Sub> dadosMenuSub = Model;
+    int i = 0;
+}
+<div class="container-menu">
+    <div class="scroller scroller-left"><i class="icmn-arrow-left"></i></div>
+    <div class="scroller scroller-right"><i class="icmn-arrow-right"></i></div>
+    <div class="involucro-menu">
+        <ul class="nav nav-tabs lista-menu" role="tablist">
+            @foreach(var itens in dadosMenuSub)
+            {
+                <li class="nav-item">
+                    <a class="nav-link" href="#@itens.url" data-url="@itens.url" data-lista="@itens.numero_grid" data-toggle="tab" data-carregado="false" data-target="#secao-@i" role="tab" aria-expanded="false">@itens.descricao.ToUpper()</a>
+                </li>
+                i++;
+            }
+        </ul>
+    </div>
+</div>*@
+
+
+<div class="container-menu">
+    <div class="scroller scroller-left"><i class="icmn-arrow-left"></i></div>
+    <div class="scroller scroller-right"><i class="icmn-arrow-right"></i></div>
+    <div class="involucro-menu">
+        <ul class="nav nav-tabs lista-menu" role="tablist">
+            @for (int i = 0; i < Model.GetLength(0); i++)
+            {
+                <li class="nav-item">
+                    <a class="nav-link" href="#@Model[i,1]" data-url="@Model[i,1]" data-lista="@Model[i,2]" data-toggle="tab" data-carregado="false" data-target="#secao-@i" role="tab" aria-expanded="false">@Model[i, 0].ToUpper()</a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

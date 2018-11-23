@@ -1,0 +1,99 @@
+/*
+ * BASIC TABLES
+ */
+.table thead th {
+    border-bottom: 1px solid #eceff4;
+    outline: none !important;
+}
+
+.table thead th:focus {
+    background: #f2f4f8;
+}
+
+.table td, .table th {
+    border-color: #eceff4;
+}
+
+.table td:focus, .table th:focus {
+    background-color: #eceff4;
+}
+
+.table tbody tr:first-child td {
+    border-top: none;
+}
+
+.table.table-hover tbody tr:hover {
+    background: #f2f4f8;
+    
+}
+
+.table tr.active, .table th.active {
+    background: #f2f4f8;
+}
+
+.table .thead-inverse th {
+    background: #38354a;
+}
+
+.table .thead-default th {
+    background: #eceff4;
+}
+
+.table.table-striped tbody tr:nth-of-type(odd) {
+    background: #f2f4f8;
+}
+
+.table-inverse thead th {
+    border-bottom-color: #514d6a;
+}
+
+.table-inverse th, .table-inverse td {
+    border-top-color: #514d6a;
+}
+
+.table-inverse th, .table-inverse td, .table-inverse thead th {
+    background: #38354a;
+}
+
+.table-inverse th:focus, .table-inverse td:focus, .table-inverse thead th:focus {
+    background: #2b2838;
+}
+
+.table-inverse tr.active, .table-inverse th.active {
+    background: #f2f4f8;
+}
+
+/* customização processo curias */
+
+td.details-control {
+    cursor: pointer;
+}
+
+div.slider {
+    display: none;
+}
+
+table.dataTable tbody td.no-padding 
+{
+    padding: 0;
+}
+
+table.dataTable tbody tr.info-linha-ativa:hover 
+{
+    background: none !important;
+}
+
+table.dataTable tbody tr.info-linha-ativa > td 
+{
+    padding: .75rem 0rem .75rem 0rem;
+}
+
+table.dataTable tbody tr.info-linha-ativa > td > div.container-fluid 
+{
+    position:relative;
+    border: dashed 1px #ccc;
+    background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(250,250,250,1) 47%, rgba(245,245,245,1) 100%);
+    overflow: hidden;
+}
+
+

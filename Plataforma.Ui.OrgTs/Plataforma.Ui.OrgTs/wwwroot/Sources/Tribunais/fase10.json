@@ -1,0 +1,53 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Tribunal_Fase10Processo/selecionarTodos",
+    "colunas": [
+      {
+        "class": "never",
+        "data": null
+      },
+      {
+        "data": "processo.nome",
+        "title": "Nome",
+        "autoWidth": true
+      },
+      {
+        "data": "processo.numero",
+        "title": "Número do processo"
+      },
+      {
+        "class": "never",
+        "data": "id_processo",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Tribunal_Fase10Processo/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../Tribunal_Fase10Processo/DocProcessoSelecionarTodos",
+        "colunas": [
+          {
+            "data": "titulo",
+            "title": "Documento"
+          },
+          {
+            "data": "data_inclusao",
+            "title": "Data de inclusão"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Tribunal_Fase10Processo/fase10-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+﻿@model List<Retorno_Permissao_Grupo_Usuario>
+@{
+    ViewData["Title"] = "Agenda de Atendimento";
+}
+@section scripts
+{
+    <script src="~/js/min/sistema/modal-agendamento.js"></script>
+    <script src="~/js/min/sistema/agendaAtendimento.js"></script>    
+}
+<partial name="menus/MenuAbasAtivos" />
+<section class="page-content">
+    <section class="page-content-inner">
+
+        <partial name="buscas/topoPesquisas" />
+
+        <partial name="menus/MenuUtilitarios" model='new MenuUtilitariosViewModel() { listaPermissoesMenuUtilitarios = Model, menuUtilitario = new string[,] { { "incluir", "Sistema_AgendaAtendimento/interno" } } }' />
+
+    </section>
+
+    <section class="page-content-inner">     
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <h1>@ViewData["Title"]</h1>
+                            </div>
+                            <div class="col-lg-9">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="panel panel-with-sidebar">
+                            <div class="panel-sidebar">
+                                <h2>Agenda do dia</h2>
+                                <div class="list-group lista-info-agenda-dia">
+
+
+                                </div>
+                            </div>
+                            <div class="panel-body height-700">
+                                @Html.AntiForgeryToken()
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="calendario"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>        
+    </section>
+</section>
+
+<div class="modal fade" id="modal-agendamento-info-dia" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title">Agendamento</h3>
+            </div>
+            <div class="modal-body info-agenda-dia font-size-14">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-warning pull-left bt-altera-agendamento" data-dismiss="modal">Alterar</button>
+            </div>
+        </div>
+    </div>
+</div>

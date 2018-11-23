@@ -1,0 +1,100 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_Menu/selecionarTodos",
+    "colunas": [
+      {
+        "data": "nome",
+        "title": "Nome"
+      },
+      {
+        "data": "ordem",
+        "title": "Ordem"
+      },
+      {
+        "data": "situacao_Cadastral.descricao",
+        "title": "Situação"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_Menu/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-usuarios-abas",
+    "data": [
+      {
+        "url": "../Sistema_Menu/PaginasMenuSelecionarTodos",
+        "colunas": [
+          {
+            "data": "nome",
+            "title": "Nome"
+          },
+          {
+            "data": "situacao_Cadastral.descricao",
+            "title": "Situação"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Sistema_Menu/paginas-menus-aba" ],
+        "botoes": [ "excel" ]
+      },
+      {
+        "url": "../Sistema_Menu/MenuAcaoSelecionarTodos",
+        "colunas": [
+          {
+            "data": "nome",
+            "title": "Nome"
+          },
+          {
+            "data": "descricao",
+            "title": "Descrição"
+          },
+          {
+            "data": "ordem",
+            "title": "Ordem"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Sistema_Menu/menu-acoes-edicao-aba" ],
+        "botoes": [ "excel" ]
+      },
+      {
+        "url": "../Sistema_Menu/MenuAreasSelecionarTodos",
+        "colunas": [
+          {
+            "data": "nome",
+            "title": "Nome"
+          },
+          {
+            "data": "descricao",
+            "title": "Descrição"
+          },
+          {
+            "data": "ordem",
+            "title": "Ordem"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Sistema_Menu/menu-areas-select", "#areaSelects" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

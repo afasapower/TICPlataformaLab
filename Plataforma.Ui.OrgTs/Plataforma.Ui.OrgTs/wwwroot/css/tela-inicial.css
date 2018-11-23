@@ -1,0 +1,245 @@
+﻿.home-palco {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.home-palco .panel-body {
+    height: 290px;
+}
+
+.grafico-linha {
+    height: 280px;
+}
+
+.busca-membros {
+    height: 271px;
+}
+
+.pendencias {
+    height: 205px;
+}
+
+.pendencias h6 {
+    margin-bottom: 5px;
+}
+
+.pendencias h5 {
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+
+.atendentes {
+    height: 574px;
+}
+.mensagem-home
+{
+    background-color:#41c9ec;
+    padding: 25px 25px 13px 30px;
+    min-height:60px;
+    color:#fff;
+}
+.mensagem-home h3
+{
+    color:#fff; 
+    margin-bottom:0px;
+}
+#data-hora span
+{
+    color:#2b5b78;
+    font-size:20px;
+    margin-right:5px;
+}
+.usuario-msg span
+{
+    font-weight:normal;
+    margin-left: 10px;
+    font-size: 24px;
+}
+.usuario-msg em
+{
+     font-family: 'Lobster', cursive;
+    font-weight: normal;
+    font-size: 28px;
+}
+
+/* MENU ACESSO RÁPIDO */
+.involucro-lista {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 222px;
+    margin-bottom: 15px;
+    border-top: solid #989898 1px;
+    border-bottom: solid #989898 1px;
+}
+.involucro-lista ul
+{
+    list-style:none;
+    margin:0px;
+    padding:0px;
+}
+.involucro-lista .bt-acesso-rapido
+{
+    border-bottom:dashed 1px #808080;
+    padding:5px 0px;
+    transition:ease 0.7s;
+}
+.involucro-lista .bt-acesso-rapido:hover
+{
+    opacity:0.5;
+}
+.involucro-lista .bt-acesso-rapido a 
+{
+    font-family: "Lato", sans;
+    font-size: 16px;
+    color: #666;
+    padding-top: 2px;
+    display: inline-block;
+}
+
+.involucro-lista p
+{
+    margin-bottom:0px;
+}
+
+.involucro-lista h6
+{
+    margin-bottom:5px;
+    margin-top:10px;
+    font-size:16px;
+}
+.item-lista
+{
+   border-bottom:dashed 1px #808080;
+   padding:5px 0px 8px 0px !important;
+}
+.involucro-lista li:last-child .item-lista
+{
+    border-bottom:none;
+}
+
+
+.sprite-involucro-lista {
+    width: 32px;
+    height: 32px;
+    background-position: 0px -32px;
+}
+
+
+.sprite-acesso-rapido {
+    display: inline-block;
+    width: 23px;
+    height: 29px;
+    background: url('../images/menu/acesso-rapido.png') no-repeat;
+    float: left;
+    margin-right: 6px;
+}
+
+.bt-acesso-rapido span[data-acao-bt-acesso="Cadastros"]
+{
+    background-position-y:0px;
+}
+
+.bt-acesso-rapido span[data-acao-bt-acesso="Movimentações"] 
+{
+    background-position-y: -29px;
+}
+.bt-acesso-rapido span[data-acao-bt-acesso="Relatórios"] 
+{
+    background-position-y: -57px;
+}
+
+.bt-acesso-rapido span[data-acao-bt-acesso="Utilitários"] 
+{
+    background-position-y: -86px;
+}
+
+
+.bt-acesso-rapido i.icmn-arrow-right2.pull-right 
+{
+    margin: 7px 5px 0px 0px;
+}
+
+
+
+/* Tema Azul */
+.bt-acesso-azul-claro 
+{
+    color: #00b0d9;
+}
+/* Tema Cinza */
+.bt-acesso-cinza-claro 
+{   
+    color: #989898
+}
+/* Tema Verde */
+.bt-acesso-verde-claro 
+{   
+    color: #2ac6b3;
+}
+/* Tema Salmão */
+.bt-acesso-salmao-claro 
+{  
+    color: #f29a94;
+}
+/* Tema Violeta */
+.bt-acesso-violeta-claro 
+{
+    color: #b492f3;
+}
+
+/* ATENDIMENTO */
+section.atendimeno div.panel-sidebar 
+{
+    width: 350px !important;
+    background: #f9f9f9;
+}
+
+section.atendimeno div.panel-body.atendentes 
+{
+    width: calc(100% - 350px) !important;
+}
+
+section.atendimeno:before 
+{
+    right: 350px !important;
+}
+section.atendimeno h3
+{
+    margin-bottom:5px;
+}
+section.atendimeno h4{margin-bottom:0px;}
+.dados-contato h4 span {
+    margin-right: 10px;
+    vertical-align:middle;
+}
+
+section.atendimeno .dados-contato {
+    border-top: dotted 1px #666;
+    margin-top: 19px;
+    padding-top: 20px;
+}
+
+/* Atendimento */
+.atendentes ul
+{
+    padding:0px;
+    margin:0px;
+    list-style:none;
+}
+/* Avatar Atendimento */
+.atendentes ul li .avatar {
+    border: solid #38bdb8 3px;
+    display:block;
+}
+.atendentes p {
+    margin-bottom: 0px;
+    font-weight: bold;
+    color: #38bdb8;
+}
+
+.atendentes h6 
+{
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-size: 18px;
+}

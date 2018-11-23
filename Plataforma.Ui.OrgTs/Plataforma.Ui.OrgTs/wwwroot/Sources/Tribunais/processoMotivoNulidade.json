@@ -1,0 +1,44 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Tribunal_ProcessoMotivoNulidade/selecionarTodos",
+    "colunas": [
+      {
+        "data": "nome",
+        "title": "nome"
+      },
+      {
+        "data": "numero",
+        "title": "Número do processo"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Tribunal_ProcessoMotivoNulidade/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../Tribunal_ProcessoMotivoNulidade/MotivosSelecionarTodos",
+        "colunas": [
+          {
+            "data": "tribunal_Motivo_Nulidade.descricao",
+            "title": "Motivo da nulidade"
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../Tribunal_ProcessoMotivoNulidade/motivos-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}

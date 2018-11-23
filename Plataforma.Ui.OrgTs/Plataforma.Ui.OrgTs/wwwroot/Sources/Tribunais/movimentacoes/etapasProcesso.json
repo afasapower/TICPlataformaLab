@@ -1,0 +1,30 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Tribunal_EtapasMovimentacoesProcesso/selecionarTodos",
+    "colunas": [
+      {
+        "className": "details-control",
+        "orderable": false,
+        "data": null,
+        "defaultContent": "<span class=\"icmn-eye-plus font-size-24 color-info\"></span>",
+        "autoWidth": true
+      },
+      {
+        "data": "nome",
+        "title": "Nome"
+      },
+      {
+        "data": "numero",
+        "title": "Número"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "" ],
+    "botoes": [ "excel" ]
+  }
+}

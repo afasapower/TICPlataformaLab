@@ -1,0 +1,91 @@
+﻿{
+  "listaInicial": {
+    "nomeLista": "#lista",
+    "url": "../Sistema_Endereco/selecionarTodos",
+    "colunas": [
+      {
+        "data": "endereco",
+        "title": "Endereço"
+      },
+      {
+        "data": "bairro",
+        "title": "Bairro"
+      },
+      {
+        "data": "cep",
+        "title": "CEP"
+      },
+      {
+        "data": "id_cidade",
+        "title": "Cidade"
+      },
+      {
+        "class": "never",
+        "data": "id",
+        "title": ""
+      }
+    ],
+    "btVisualizarLista": [ "../Sistema_Endereco/interno" ],
+    "botoes": [ "excel" ]
+  },
+  "abasModulo": {
+    "nomeLista": "#lista-abas",
+    "data": [
+      {
+        "url": "../menu/PaginasMenuSelecionarTodos",
+        "colunas": [
+          {
+            "data": "endereco",
+            "title": "Endereço"
+          },
+          {
+            "data": "bairro",
+            "title": "Bairro"
+          },
+          {
+            "data": "complemento",
+            "title": "Complemento"
+          },
+          {
+            "data": "cep",
+            "title": "CEP"
+          },
+          {
+            "data": "id_cidade",
+            "title": "Cidade"
+          },
+          {
+            "data": "observacao",
+            "title": "Observação"
+          },
+          {
+            "class": "never",
+            "data": "id_pessoa",
+            "title": "Pessoa"
+          },
+          {
+            "class": "never",
+            "data": "data_inclusao",
+            "title": ""
+          },
+          {
+            "class": "never",
+            "data": "usuario",
+            "title": ""
+          },
+          {
+            "class": "never",
+            "data": "id",
+            "title": ""
+          }
+        ],
+        "btVisualizarLista": [ "../menu/paginas-menus-aba" ],
+        "botoes": [ "excel" ]
+      }
+    ]
+  }
+}
+
+
+                                      
+                                      
